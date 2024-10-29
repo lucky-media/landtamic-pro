@@ -1,0 +1,29 @@
+<div class="relative">
+    <div class="absolute top-1/2 max-lg:-translate-y-1/2 lg:top-0 -right-1/2 lg:right-0 -z-10">
+        {{ partial:partials/ui/hero_blur_circle }}
+    </div>
+
+    <div class="container py-20">
+        <x-heading class="max-md:text-center max-w-3xl">{{ title }}</x-heading>
+        {{ if features }}
+            <div
+                class="grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 mt-16 md:gap-x-8 gap-y-12 lg:gap-y-14">
+                {{ features }}
+                    <div class="p-6 bg-white dark:bg-dark-700 rounded-lg shadow-md">
+                        {{ if title }}
+                            <x-heading size="h5" class="mb-14">{{ title }}</x-heading>
+                        {{ /if }}
+                        {{ if light_image || dark_image }}
+                            <div class="dark:hidden">
+                                {{ partial:components/picture :image="light_image" class="size-8 shrink-0" }}
+                            </div>
+                            <div class="hidden dark:block">
+                                {{ partial:components/picture :image="dark_image" class="size-8 shrink-0" }}
+                            </div>
+                        {{ /if }}
+                    </div>
+                {{ /features }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

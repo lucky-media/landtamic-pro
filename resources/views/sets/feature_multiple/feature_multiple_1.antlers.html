@@ -1,0 +1,24 @@
+<div class="container py-12 md:py-16">
+    <x-heading class="max-md:text-center md:max-w-3xl">{{ title }}</x-heading>
+    {{ if features }}
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8 mt-12">
+            {{ features }}
+                <x-link-wrapper link="{{ link }}" target_blank="{{ target_blank }}">
+                    {{ if light_image || dark_image }}
+                        <div class="w-full overflow-hidden rounded h-64">
+                            <div class="dark:hidden">
+                                {{ partial:components/picture :image="light_image" cover="true" }}
+                            </div>
+                            <div class="hidden dark:block">
+                                {{ partial:components/picture :image="dark_image" cover="true" }}
+                            </div>
+                        </div>
+                    {{ /if }}
+                    {{ if rich_text }}
+                        <x-richtext size="lg" class="mt-2">{{ rich_text }}</x-richtext>
+                    {{ /if }}
+                </x-link-wrapper>
+            {{ /features }}
+        </div>
+    {{ /if }}
+</div>

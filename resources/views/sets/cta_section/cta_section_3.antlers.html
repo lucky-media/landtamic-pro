@@ -1,0 +1,13 @@
+<div class="bg-primary-700 py-32">
+    <div class="container max-w-3xl text-center">
+        <x-heading color="white">{{ title }}</x-heading>
+        {{ if toggle and label }}
+            <div class="mt-10">
+                <x-button url="{{ link }}" target="{{ target_blank ?? '_self' }}" variant="{{ button_variant }}"
+                    size="{{ button_size }}">
+                    {{ label }}
+                </x-button>
+            </div>
+        {{ /if }}
+    </div>
+</div>

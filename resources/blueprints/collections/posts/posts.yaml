@@ -1,0 +1,168 @@
+title: Posts
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: image
+        field:
+          mode: grid
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: Image
+          type: assets
+          icon: assets
+          instructions: 'Will be displayed as featured image on post, and used as post thumbnail.'
+          listable: hidden
+          validate:
+            - required
+      -
+        handle: article
+        field:
+          always_show_set_button: false
+          sets:
+            image:
+              display: Image
+              fields:
+                -
+                  handle: image
+                  field:
+                    mode: grid
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: false
+                    max_files: 1
+                    display: Image
+                    type: assets
+                    icon: assets
+                    listable: hidden
+                    validate:
+                      - required
+            image_grid:
+              display: 'Image Grid'
+              fields:
+                -
+                  handle: image_grid
+                  field:
+                    options:
+                      two: 'Two Columns'
+                      three: 'Three Columns'
+                      four: 'Four Columns'
+                    default: two
+                    display: 'Image Grid'
+                    type: button_group
+                    icon: button_group
+                    instructions: 'Select grid columns, default is two.'
+                    listable: hidden
+                -
+                  handle: images
+                  field:
+                    mode: grid
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    display: Images
+                    type: assets
+                    icon: assets
+                    instructions: 'Displays images in a grid'
+                    listable: hidden
+                    validate:
+                      - required
+            video:
+              display: Video
+              fields:
+                -
+                  handle: video
+                  field:
+                    display: Video
+                    type: video
+                    icon: video
+                    instructions: 'Youtube or Vimeo Link'
+                    listable: hidden
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+          container: assets
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: false
+          enable_input_rules: true
+          enable_paste_rules: true
+          display: Article
+          type: bard
+          icon: bard
+          listable: hidden
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+          validate:
+            - required
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required
+      -
+        handle: author
+        field:
+          max_items: 1
+          mode: select
+          display: Author
+          type: users
+          icon: users
+          listable: hidden
+      -
+        handle: category
+        field:
+          max_items: 1
+          mode: select
+          create: true
+          taxonomies:
+            - categories
+          display: Category
+          type: terms
+          icon: taxonomy
+          listable: hidden
+      -
+        handle: tags
+        field:
+          display: Tags
+          type: taggable
+          icon: tags
+          listable: hidden
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo

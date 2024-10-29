@@ -1,0 +1,16 @@
+<div class="relative max-md:py-16 md:pb-32 md:pt-28 overflow-hidden">
+    <div class="absolute inset-0 bg-primary-900 dark:bg-dark-900 opacity-90 -z-10"></div>
+    <div class="absolute inset-0 -z-20">
+        {{ partial:components/picture :image="header_image" cover="true" }}
+    </div>
+    <div class="container">
+        {{ if has_subtitle }}
+            <x-paragraph size="sm" color="white" weight="medium" class="mb-2 uppercase">
+                {{ subtitle }}
+            </x-paragraph>
+        {{ /if }}
+        <x-heading color="white">
+            {{ title }}
+        </x-heading>
+    </div>
+</div>

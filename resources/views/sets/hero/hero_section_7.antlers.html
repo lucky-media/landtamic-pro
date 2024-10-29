@@ -1,0 +1,24 @@
+<div class="container py-16 lg:py-40">
+    <div class="grid grid-cols-1 lg:grid-cols-2 max-lg:justify-items-center items-center gap-12 lg:gap-8">
+        <div class="max-w-xl max-lg:justify-self-center max-lg:text-center">
+            <x-heading size="h1">{{ title }}</x-heading>
+            {{ if has_description }}
+                <x-richtext size="xl" class="mt-4">{{ description }}</x-richtext>
+            {{ /if }}
+            {{ if toggle and label }}
+                <x-button url="{{ link }}" target="{{ target_blank ?? '_self' }}" variant="{{ button_variant }}"
+                    size="{{ button_size }}" class="mt-8">
+                    {{ label }}
+                </x-button>
+            {{ /if }}
+        </div>
+        {{ if hero_image }}
+            <div
+                class="relative bg-primary-100 dark:bg-dark-800 size-80 md:size-96 xl:size-[600px] rounded-full overflow-hidden">
+                <div class="absolute top-[30%] left-1/2 -translate-x-1/2">
+                    {{ partial:components/picture :image="hero_image" }}
+                </div>
+            </div>
+        {{ /if }}
+    </div>
+</div>

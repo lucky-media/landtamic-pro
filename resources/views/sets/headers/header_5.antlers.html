@@ -1,0 +1,15 @@
+<div class="relative overflow-hidden bg-white dark:bg-dark-900">
+    <div class="container py-16 xl:py-28">
+        {{ if has_subtitle }}
+            <x-paragraph size="sm" color="primary" weight="medium" class="mb-2 uppercase">
+                {{ subtitle }}
+            </x-paragraph>
+        {{ /if }}
+        <x-heading>
+            {{ title }}
+        </x-heading>
+    </div>
+    <div class="max-md:hidden">
+        {{ partial:components/picture :image="header_image" class="object-center object-none absolute top-0 left-1/2 w-1/2" }}
+    </div>
+</div>

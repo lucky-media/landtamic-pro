@@ -1,0 +1,13 @@
+<div class="container py-16 max-md:px-0">
+    <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-8 gap-2 mb-32 lg:mb-16 max-md:px-4">
+        <x-heading size="h3">{{ title }}</x-heading>
+        {{ if has_description }}
+            <x-richtext size="lg">{{ description }}</x-richtext>
+        {{ /if }}
+    </div>
+    {{ if image }}
+        <div class="overflow-hidden rounded-2xl">
+            {{ partial:components/picture cover="true" class="max-h-96" }}
+        </div>
+    {{ /if }}
+</div>

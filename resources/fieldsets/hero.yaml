@@ -1,0 +1,38 @@
+title: Hero
+fields:
+  -
+    handle: version
+    field:
+      options:
+        hero_section_1: 'Variant 1'
+        hero_section_2: 'Variant 2'
+        hero_section_3: 'Variant 3'
+        hero_section_4: 'Variant 4'
+        hero_section_5: 'Variant 5'
+        hero_section_6: 'Variant 6'
+        hero_section_7: 'Variant 7'
+      display: 'Hero Variant'
+      default: hero_section_1
+      type: button_group
+      instructions: 'Please select a hero variant'
+      validate:
+        - required
+  -
+    handle: title
+    field:
+      display: Title
+      type: text
+      instructions: 'Title of the hero'
+      validate:
+        - required
+  -
+    import: set_description
+  -
+    handle: hero_image
+    field:
+      display: 'Hero Image'
+      type: assets
+      container: assets
+      max_files: 1
+  -
+    import: button

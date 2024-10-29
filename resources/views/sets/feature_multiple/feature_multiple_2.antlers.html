@@ -1,0 +1,30 @@
+<div class="container py-12 md:py-16">
+    <x-heading class="max-lg:text-center md:max-w-xl">{{ title }}</x-heading>
+    {{ if features }}
+        <div class="grid gap-y-6 lg:gap-y-12 gap-x-8 grid-cols-1 lg:grid-cols-2 mt-16">
+            {{ features }}
+                <div class="flex space-x-4 lg:space-x-10">
+                    {{ if light_image || dark_image }}
+                        <div
+                            class="shrink-0 size-20 bg-primary-100 dark:bg-primary-700 rounded-full flex items-center justify-center">
+                            <div class="dark:hidden">
+                                {{ partial:components/picture :image="light_image" class="size-8 shrink-0" }}
+                            </div>
+                            <div class="hidden dark:block">
+                                {{ partial:components/picture :image="dark_image" class="size-8 shrink-0" }}
+                            </div>
+                        </div>
+                    {{ /if }}
+                    <div>
+                        {{ if title }}
+                            <x-heading size="h5">{{ title }}</x-heading>
+                        {{ /if }}
+                        {{ if rich_text }}
+                            <x-richtext class="mt-2">{{ rich_text }}</x-richtext>
+                        {{ /if }}
+                    </div>
+                </div>
+            {{ /features }}
+        </div>
+    {{ /if }}
+</div>

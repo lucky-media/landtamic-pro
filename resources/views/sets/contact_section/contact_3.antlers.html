@@ -1,0 +1,24 @@
+<div class="relative max-md:py-10">
+    <div class="container flex md:justify-end max-md:flex-col">
+        {{ if image }}
+            <div class="md:absolute md:w-1/2 -left-14 top-0 h-full max-md:h-60">
+                {{ partial:components/picture cover="true" }}
+            </div>
+        {{ /if }}
+        {{ if enable_form }}
+            <div class="py-16 xl:py-24 md:w-1/2">
+                {{ if form_title }}
+                    <x-heading size="h3">{{ form_title }}</x-heading>
+                {{ /if }}
+                {{ if form_subtitle }}
+                    <x-paragraph class="mt-2">
+                        {{ form_subtitle }}
+                    </x-paragraph>
+                {{ /if }}
+                {{ if contact_form }}
+                    {{ partial:partials/form }}
+                {{ /if }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

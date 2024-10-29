@@ -1,0 +1,24 @@
+title: "Set Description"
+fields:
+  - handle: has_description
+    field:
+      type: toggle
+      display: "Has Description"
+      width: 33
+  - handle: description
+    field:
+      buttons:
+        - bold
+        - italic
+        - anchor
+        - superscript
+        - subscript
+      toolbar_mode: floating
+      remove_empty_nodes: false
+      type: bard
+      display: Description
+      width: 66
+      validate:
+        - "required_if:has_description,true"
+      if:
+        has_description: "equals true"

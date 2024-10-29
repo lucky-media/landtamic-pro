@@ -1,0 +1,12 @@
+<{{ has_link ? 'a' : 'div' }} {{ if link }} href="{{ link }}" aria-label="{{ label or title }}" {{ /if }}
+    target="{{ target_blank ? '_blank' : '_self' }}">
+    <div class="mb-4 overflow-hidden rounded-lg xl:h-96 h-80">
+        {{ partial:components/picture cover="true" }}
+    </div>
+    {{ if title }}
+        <x-heading size="h5" class="{{ has_link ?= 'hover:text-secondary-900' }}">{{ title }}</x-heading>
+    {{ /if }}
+    {{ if rich_text }}
+        <x-richtext>{{ rich_text }}</x-richtext>
+    {{ /if }}
+</{{ has_link ? 'a' : 'div' }}>

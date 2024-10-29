@@ -1,0 +1,27 @@
+<div class="relative overflow-hidden bg-primary-100 dark:bg-dark-800 pt-16 lg:pt-20 pb-32">
+    <div class="container grid grid-cols-1 lg:grid-cols-2 items-center gap-14 lg:gap-8 relative z-10">
+        <div class="max-w-xl max-lg:justify-self-center max-lg:text-center">
+            <x-heading size="h1">{{ title }}</x-heading>
+            {{ if has_description }}
+                <x-richtext size="xl" class="mt-4">{{ description }}</x-richtext>
+            {{ /if }}
+            {{ if toggle and label }}
+                <x-link-wrapper link="{{ link }}" target_blank="{{ target_blank }}"
+                    class="inline-flex items-center mt-8">
+                    {{ svg src="play" class="shrink-0 size-12 mr-2 stroke-dark-900 dark:stroke-white" }}
+                    <span class="w-28 md:w-20 h-[2px] bg-dark-900 dark:bg-white"></span>
+                    <x-paragraph size="sm" weight="semibold" class="ml-2 uppercase">{{ label }}</x-paragraph>
+                </x-link-wrapper>
+            {{ /if }}
+        </div>
+        {{ if hero_image }}
+            <div class="rounded-2xl max-h-80 md:max-h-96 xl:max-h-[580px] overflow-hidden">
+                {{ partial:components/picture :image="hero_image" cover="true" }}
+            </div>
+        {{ /if }}
+    </div>
+
+    <div class="absolute bottom-1/2 lg:top-0 right-0">
+        {{ partial:partials/ui/hero_blur_circle }}
+    </div>
+</div>

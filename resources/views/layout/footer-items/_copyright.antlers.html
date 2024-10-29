@@ -1,0 +1,8 @@
+{{ $text_align = switch(
+                  (align == 'left') => 'mx-auto md:mx-0 md:mr-auto',
+                  (align == 'right') => 'mx-auto md:mx-0 md:ml-auto',
+                  () => 'mx-auto') }}
+<div
+    class="flex flex-col text-sm font-normal text-dark-600 dark:text-dark-400 prose prose-p:text-dark-600 prose-p:dark:text-dark-400 prose-a:text-dark-600 prose-a:dark:text-dark-400 prose-a:hover:text-secondary-900 {{ $text_align }}">
+    {{ rich_text }}
+</div>

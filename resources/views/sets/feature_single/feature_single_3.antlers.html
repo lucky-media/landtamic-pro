@@ -1,0 +1,23 @@
+<div class="pb-20">
+    {{ if image }}
+        <div class="h-72 md:h-96 xl:h-[500px] overflow-hidden">
+            {{ partial:components/picture cover="true" }}
+        </div>
+    {{ /if }}
+    <div class="container relative z-10">
+        <div class="md:w-3/4 xl:w-1/2 ml-auto -mt-20 lg:-mt-48">
+            <div class="p-8 rounded-t-lg bg-white dark:bg-dark-900 md:p-12 xl:p-16">
+                <x-heading size="h3">{{ title }}</x-heading>
+                {{ if has_description }}
+                    <x-richtext size="lg" class="mt-4">{{ description }}</x-richtext>
+                {{ /if }}
+                {{ if toggle and label }}
+                    <x-action-link href="{{ link }}" target_blank="{{ target_blank }}" color="{{ button_variant }}"
+                        size="{{ button_size }}" class="mt-10">
+                        {{ label }}
+                    </x-action-link>
+                {{ /if }}
+            </div>
+        </div>
+    </div>
+</div>

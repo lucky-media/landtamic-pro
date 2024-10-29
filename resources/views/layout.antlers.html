@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ site:short_locale }}">
+
+<head>
+    {{ if theme:enable_dark_mode }}
+        <script type="text/javascript">
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia(
+                    '(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark')
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        </script>
+    {{ /if }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{# Themes #}}
+    {{ partial src="/partials/theme_switcher" }}
+    {{# Favicon #}}
+    {{ partial:partials/favicons }}
+    {{# SEO Meta Tags #}}
+    {{ partial:seo }}
+    {{ vite src="resources/css/tailwind.css|resources/js/site.js" }}
+</head>
+
+<body
+    class="flex flex-col justify-between min-h-screen font-sans antialiased dark:bg-dark-900 {{ environment === 'local' ?= 'debug-screens' }}">
+
+    <div class="relative overflow-hidden">
+        {{# Navigation Partials #}}
+        {{ partial:layout/navigation }}
+        {{# Content #}}
+        {{ template_content }}
+    </div>
+
+    {{# Footer Partials #}}
+    {{ partial src="layout/_footer" }}
+</body>
+
+</html>

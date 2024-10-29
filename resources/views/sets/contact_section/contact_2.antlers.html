@@ -1,0 +1,48 @@
+{{ if image }}
+    <div class="overflow-hidden max-h-96">
+        {{ partial:components/picture cover="true" }}
+    </div>
+{{ /if }}
+<div class="container py-20">
+    <div class="grid gap-8 grid-cols-1 md:grid-cols-2">
+        {{ if enable_location }}
+            <div class="max-w-xl">
+                <div class="mb-9 space-y-2 max-w-lg">
+                    {{ if location_title }}
+                        <x-heading size="h3">{{ location_title }}</x-heading>
+                    {{ /if }}
+                    {{ if location_subtitle }}
+                        <x-paragraph color="gray" class="mt-2">
+                            {{ location_subtitle }}
+                        </x-paragraph>
+                    {{ /if }}
+                </div>
+                <div class="space-y-10">
+                    {{ locations }}
+                        <div>
+                            <x-heading size="h5">{{ title }}</x-heading>
+                            {{ if rich_text }}
+                                <x-richtext color="gray" class="mt-4">{{ rich_text }}</x-richtext>
+                            {{ /if }}
+                        </div>
+                    {{ /locations }}
+                </div>
+            </div>
+        {{ /if }}
+        {{ if enable_form }}
+            <div>
+                {{ if form_title }}
+                    <x-heading size="h3" class="max-w-lg">{{ form_title }}</x-heading>
+                {{ /if }}
+                {{ if form_subtitle }}
+                    <x-paragraph color="gray" class="mt-2 max-w-xl">
+                        {{ form_subtitle }}
+                    </x-paragraph>
+                {{ /if }}
+                {{ if contact_form }}
+                    {{ partial:partials/form }}
+                {{ /if }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

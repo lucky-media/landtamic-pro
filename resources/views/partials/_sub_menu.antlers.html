@@ -1,0 +1,36 @@
+<div class="container xl:absolute w-full xl:top-24 xl:z-50 xl:left-1/2 xl:-translate-x-1/2">
+    <div class="flex md:flex-row flex-col rounded-lg max-xl:py-6 xl:p-6 gap-6 shadow-sub-nav bg-white dark:bg-dark-900">
+        <div class="md:w-1/2 xl:w-3/4 flex max-md:justify-between gap-10 flex-wrap">
+            {{ children }}
+                <div>
+                    <p class="mb-4 text-sm uppercase text-dark-600 dark:text-dark-400">{{ title }}</p>
+                    <ul class="xl:space-y-4">
+                        {{ children }}
+                            {{ partial:components/menu_item }}
+                        {{ /children }}
+                    </ul>
+                </div>
+            {{ /children }}
+        </div>
+        <div class="md:w-1/2 xl:w-1/4 bg-primary-100 dark:bg-dark-800 rounded-lg p-4 relative overflow-hidden">
+            <p class="mb-4 text-sm uppercase text-dark-600 dark:text-dark-400">Follow Us</p>
+            {{ theme:links }}
+                <ul class="grid grid-cols-6 gap-x-6 gap-y-4 items-start relative z-10">
+                    {{ social }}
+                        <li class="group">
+                            {{ partial:partials/social_link_icon }}
+                        </li>
+                    {{ /social }}
+                </ul>
+            {{ /theme:links }}
+
+            <div
+                class="absolute w-80 h-10 right-0 bottom-16 rotate-[170deg] blur-lg bg-gradient-to-br from-transparent via-primary-900 opacity-20 to-transparent">
+            </div>
+
+            <div
+                class="absolute w-80 h-10 right-0 bottom-0 rotate-[170deg] blur bg-gradient-to-br from-transparent via-primary-900 opacity-20 to-transparent">
+            </div>
+        </div>
+    </div>
+</div>

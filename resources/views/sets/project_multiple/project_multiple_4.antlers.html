@@ -1,0 +1,12 @@
+<div class="container py-16 space-y-12 md:py-20">
+    {{ if title }}
+        <x-heading class="max-w-3xl">{{ title }}</x-heading>
+    {{ /if }}
+    {{ if projects }}
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-3 md:h-[950px] xl:h-[1290px]">
+            {{ projects }}
+                {{ partial:components/project_grid }}
+            {{ /projects }}
+        </div>
+    {{ /if }}
+</div>

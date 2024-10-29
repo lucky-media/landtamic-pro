@@ -1,0 +1,10 @@
+---
+colors:
+  purple: 'bg-primary-600'
+  white: 'bg-white'
+  blue: 'bg-dark-600'
+---
+
+<div
+  class="{{ color ? view:colors[color] : view:colors['purple'] }} size-96 md:size-[450px] xl:size-[650px] rounded-full blur-3xl opacity-20">
+</div>

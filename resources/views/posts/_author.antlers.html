@@ -1,0 +1,31 @@
+<div class="mt-12">
+    <p class="text-sm font-semibold tracking-wider text-gray-900 dark:text-white uppercase">
+        About the author
+    </p>
+    <div class="mt-4 bg-primary-100 dark:bg-dark-900 border border-primary-200 dark:border-dark-600 p-6">
+        {{ author }}
+            <div class="flex gap-6">
+                <div class="shrink-0 size-24 overflow-hidden">
+                    {{ partial:components/picture :image="avatar" cover="true" }}
+                </div>
+
+                <div>
+                    <x-heading size="h6">
+                        {{ name }}
+                    </x-heading>
+                    {{ if position }}
+                        <x-paragraph size="sm" color="gray">
+                            {{ position }}
+                        </x-paragraph>
+                    {{ /if }}
+                    {{ if biography }}
+                        <p class="mt-4 text-sm text-dark-900 dark:text-white">
+                            {{ biography }}
+                        </p>
+                    {{ /if }}
+                </div>
+            </div>
+        {{ /author }}
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+<div class="container py-16">
+    <div id="testimonial-carousel-2" x-ignore ax-load="visible" x-data="slider('testimonial-carousel-2')"
+        class="splide">
+        <div class="splide__track">
+            <div class="splide__list">
+                {{ testimonials }}
+                    <div class="splide__slide">
+                        <div class="flex lg:flex-row flex-col lg:items-end py-12 lg:py-16">
+                            {{ if has_author }}
+                                <div class="lg:w-1/4 flex items-center">
+                                    {{ if image }}
+                                        <div class="size-14 rounded-full overflow-hidden">
+                                            {{ partial:components/picture cover="true" }}
+                                        </div>
+                                    {{ /if }}
+                                    <div class="ml-4">
+                                        <x-heading class="!text-lg font-bold mt-2">
+                                            {{ full_name }}
+                                        </x-heading>
+                                        {{ if position }}
+                                            <x-paragraph size="sm" color="gray">{{ position }}</x-paragraph>
+                                        {{ /if }}
+                                    </div>
+                                </div>
+                            {{ /if }}
+                            <div class="lg:w-3/4 max-lg:mt-16">
+                                <div class="flex items-start space-x-3.5">
+                                    {{ svg src="square-quote" class="size-9 shrink-0 fill-primary-700 -mt-5" }}
+                                    {{ if rich_text }}
+                                        <x-richtext size="xl">{{ rich_text }}</x-richtext>
+                                    {{ /if }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{ /testimonials }}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container py-12 md:py-20">
+    <x-heading class="mx-auto text-center md:max-w-xl">{{ title }}</x-heading>
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 mt-14">
+        {{ if image }}
+            <div class="place-self-center">
+                {{ partial:components/picture cover="true" class="max-h-[620px]" }}
+            </div>
+        {{ /if }}
+        {{ if features }}
+            <div class="space-y-12 lg:px-12">
+                {{ features }}
+                    <div>
+                        <div class="flex items-center">
+                            <span class="shrink-0 size-1.5 mr-3 rounded-full bg-primary-700"></span>
+                            {{ if title }}
+                                <x-heading size="h5">{{ title }}</x-heading>
+                            {{ /if }}
+                        </div>
+                        {{ if rich_text }}
+                            <x-richtext size="lg" class="mt-2">{{ rich_text }}</x-richtext>
+                        {{ /if }}
+                    </div>
+                {{ /features }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

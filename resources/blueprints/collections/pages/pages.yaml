@@ -1,0 +1,107 @@
+title: Pages
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: custom_page_header
+        field:
+          default: false
+          display: 'Custom Page Header'
+          type: toggle
+          icon: toggle
+          instructions: 'Toggle this enable custom page header.'
+          listable: hidden
+      -
+        handle: page_header
+        field:
+          display: 'Page Header'
+          type: section
+          icon: section
+          listable: hidden
+          if:
+            custom_page_header: 'equals true'
+      -
+        handle: header_version
+        field:
+          options:
+            header_1: 'Variant 1'
+            header_2: 'Variant 2'
+            header_3: 'Variant 3'
+            header_4: 'Variant 4'
+            header_5: 'Variant 5'
+          default: header_1
+          display: 'Header Variant'
+          type: button_group
+          icon: button_group
+          width: 66
+          listable: hidden
+          if:
+            custom_page_header: 'equals true'
+      -
+        handle: header_image
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: false
+          max_files: 1
+          display: 'Header Image'
+          type: assets
+          icon: assets
+          width: 33
+          listable: hidden
+          if:
+            custom_page_header: 'equals true'
+            header_version: 'contains_any header_4, header_5'
+      -
+        handle: has_subtitle
+        field:
+          default: false
+          display: 'Has Subtitle ?'
+          type: toggle
+          icon: toggle
+          instructions: 'Displayed above title.'
+          width: 50
+          listable: hidden
+          if:
+            custom_page_header: 'equals true'
+      -
+        handle: subtitle
+        field:
+          input_type: text
+          antlers: false
+          display: Subtitle
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          if:
+            custom_page_header: 'equals true'
+            has_subtitle: 'equals true'
+      -
+        import: blocks
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+          validate:
+            - required
+            - 'new \Statamic\Rules\UniqueEntryValue({collection}, {id}, {site})'
+  seo:
+    display: SEO
+    fields:
+      -
+        import: seo

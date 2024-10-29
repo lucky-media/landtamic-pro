@@ -1,0 +1,24 @@
+<div class="container py-10 md:py-32">
+    <div
+        class="flex md:items-center gap-16 max-md:flex-col {{ theme:page_image_position === 'left' ? 'flex-row-reverse' : '' }}">
+        <div class="flex flex-col space-y-4 md:w-1/2">
+            <x-heading>{{ theme:page_title }}</x-heading>
+            {{ if theme:page_desc }}
+                <x-richtext size="xl" color="gray">
+                    {{ theme:page_desc }}
+                </x-richtext>
+            {{ /if }}
+            {{ if theme:page_toggle and theme:page_label }}
+                <x-button class="w-max" variant="{{ theme:page_button_variant }}" size="{{ theme:page_button_size }}"
+                    url="{{ theme:page_link ?? '/' }}">
+                    {{ theme:page_label }}
+                </x-button>
+            {{ /if }}
+        </div>
+        {{ if theme:page_image }}
+            <div class="max-h-[500px] md:w-1/2">
+                {{ partial:components/picture :image="theme:page_image" }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

@@ -1,0 +1,18 @@
+title: 'Rich Text'
+fields:
+  -
+    handle: rich_text
+    field:
+      buttons:
+        - bold
+        - italic
+        - removeformat
+        - quote
+        - anchor
+        - underline
+        - small
+        - horizontalrule
+      toolbar_mode: floating
+      remove_empty_nodes: false
+      type: bard
+      display: 'Rich Text'

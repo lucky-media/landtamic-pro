@@ -1,0 +1,43 @@
+<div class="container py-16">
+    <div class="grid items-center grid-cols-1 xl:grid-cols-2 gap-8">
+        {{ if image }}
+            <div class="h-96 xl:h-[710px] overflow-hidden">
+                {{ partial:components/picture cover="true" }}
+            </div>
+        {{ /if }}
+        <div class="xl:px-12">
+            <x-heading size="h3">{{ title }}</x-heading>
+            {{ if has_description }}
+                <x-richtext size="lg" class="mt-4">{{ description }}</x-richtext>
+            {{ /if }}
+            {{ if features }}
+                <div class="mt-10 space-y-6">
+                    {{ features }}
+                        <div class="flex items-center">
+                            {{ if light_image || dark_image }}
+                                <div class="dark:hidden">
+                                    {{ partial:components/picture :image="light_image" class="shrink-0 size-8" }}
+                                </div>
+                                <div class="hidden dark:block">
+                                    {{ partial:components/picture :image="dark_image" class="shrink-0 size-8" }}
+                                </div>
+                            {{ /if }}
+                            <div class="ml-4">
+                                <x-heading size="h6">{{ title }}</x-heading>
+                                {{ if description }}
+                                    <x-paragraph color="gray" class="mt-1 text-base">{{ description }}</x-paragraph>
+                                {{ /if }}
+                            </div>
+                        </div>
+                    {{ /features }}
+                </div>
+            {{ /if }}
+            {{ if toggle and label }}
+                <x-button icon url="{{ link }}" target="{{ target_blank ?? '_self' }}" variant="{{ button_variant }}"
+                    size="{{ button_size }}" class="mt-10">
+                    {{ label }}
+                </x-button>
+            {{ /if }}
+        </div>
+    </div>
+</div>

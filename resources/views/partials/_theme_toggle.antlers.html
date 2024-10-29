@@ -1,0 +1,22 @@
+<div x-data="darkMode" x-cloak x-transition class="flex items-center space-x-1">
+    <p class="text-dark-900 dark:text-white w-10">
+        <span x-show="isDarkMode" class="font-medium">
+            Dark
+        </span>
+
+        <span x-show="!isDarkMode" class="font-medium">
+            Light
+        </span>
+    </p>
+
+    <button @click="toggle" :aria-label="isDarkMode ? 'Toggle Light Mode' : 'Toggle Dark Mode'"
+        class="bg-primary-300 dark:bg-dark-600 rounded-full p-1 flex space-x-1">
+        <span type="button" class="rounded-full p-0.5" :class="{'bg-primary-700 dark:bg-dark-500': !isDarkMode }">
+            {{ svg src="sun" class="size-3 shrink-0" }}
+        </span>
+        <span type="button" class="rounded-full p-0.5" :class="{'bg-primary-700 dark:bg-dark-500': isDarkMode }">
+            {{ svg src="moon" class="size-3 shrink-0" }}
+        </span>
+    </button>
+
+</div>

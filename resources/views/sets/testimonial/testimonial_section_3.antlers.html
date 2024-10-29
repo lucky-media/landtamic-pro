@@ -1,0 +1,44 @@
+<div class="py-16 lg:py-20 bg-dark-900">
+    <div class="container">
+        {{ if title }}
+            <x-heading color="white" class="max-w-3xl max-md:text-center">{{ title }}</x-heading>
+        {{ /if }}
+        <div class="grid gap-8 grid-cols-1 lg:grid-cols-2 mt-10 relative">
+            {{ testimonials }}
+                <div>
+                    <div class="text-center bg-white dark:bg-dark-700 rounded-lg p-8 z-10 relative">
+                        {{ if title }}
+                            <x-heading size="h6">{{ title }}</x-heading>
+                        {{ /if }}
+                        {{ if rich_text }}
+                            <x-richtext class="mt-2">{{ rich_text }}</x-richtext>
+                        {{ /if }}
+                    </div>
+
+                    <!-- Triangle -->
+                    <div class="w-6 mx-auto overflow-hidden">
+                        <div class="w-6 h-4 origin-top-left transform -rotate-45 bg-white dark:bg-dark-700"></div>
+                    </div>
+                    {{ if has_author }}
+                        <div class="flex items-center justify-center mt-4">
+                            {{ if image }}
+                                <div class="size-14 rounded-full overflow-hidden">
+                                    {{ partial:components/picture cover="true" }}
+                                </div>
+                            {{ /if }}
+                            <div class="ml-4">
+                                <x-heading color="white" class="!text-lg font-bold">
+                                    {{ full_name }}
+                                </x-heading>
+                                {{ if position }}
+                                    <x-paragraph size="sm" color="white">{{ position }}</x-paragraph>
+                                {{ /if }}
+                            </div>
+                        </div>
+                    {{ /if }}
+                </div>
+            {{ /testimonials }}
+            {{ svg src="quote" class="max-lg:hidden absolute -right-10 -top-32 size-44 z-0 rotate-180 fill-white opacity-20" }}
+        </div>
+    </div>
+</div>

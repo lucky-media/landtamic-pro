@@ -1,0 +1,5 @@
+<input
+    class="w-full px-4 py-3 rounded-lg border border-dark-200 text-dark-800 dark:text-white placeholder-dark-400 dark:bg-dark-700 dark:border-dark-600 focus:outline-none focus:ring-0 focus:border-primary-600 {{ error ?= 'border-red-500' }}"
+    id="{{ handle }}" name="{{ handle }}" type="{{ input_type ?? 'text' }}"
+    placeholder="{{ placeholder or display }}" {{ validate | contains:required ?= "required" }}
+    {{ old ?= 'value="{old}"' }} />

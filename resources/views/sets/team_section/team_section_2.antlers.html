@@ -1,0 +1,47 @@
+<div class="relative">
+    <div class="container py-20">
+        <div class="max-w-xl">
+            {{ if title }}
+                <x-heading>{{ title }}</x-heading>
+            {{ /if }}
+            {{ if has_description }}
+                <x-paragraph color="gray" class="mt-2">
+                    {{ description }}
+                </x-paragraph>
+            {{ /if }}
+        </div>
+        {{ if members }}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                {{ members }}
+                    <div>
+                        {{ if image }}
+                            <div class="mb-4 overflow-hidden rounded-2xl h-56">
+                                {{ partial:components/picture cover="true" }}
+                            </div>
+                        {{ /if }}
+                        <x-heading size="h6">{{ full_name }}</x-heading>
+                        {{ if position }}
+                            <x-paragraph color="gray" weight="medium" class="mt-2">
+                                {{ position }}
+                            </x-paragraph>
+                        {{ /if }}
+                        {{ if toggle_social }}
+                            <ul class="flex space-x-1 mt-4">
+                                {{ social }}
+                                    <li class="bg-primary-700">
+                                        <x-link-wrapper link="{{ url }}" aria_label="Visit {{ title }}"
+                                            class="flex items-center justify-center shrink-0 size-8">
+                                            {{ svg :src="icon" class="size-6 text-white" }}
+                                        </x-link-wrapper>
+                                    </li>
+                                {{ /social }}
+                            </ul>
+                        {{ /if }}
+                    </div>
+                {{ /members }}
+            </div>
+        {{ /if }}
+    </div>
+
+    <div class="absolute bottom-0 left-0 w-full bg-primary-100 dark:bg-dark-800 h-1/2 -z-10"></div>
+</div>

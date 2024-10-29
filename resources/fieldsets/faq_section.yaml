@@ -1,0 +1,43 @@
+title: 'FAQ Section'
+fields:
+  -
+    handle: version
+    field:
+      options:
+        faq_section_1: 'Variant 1'
+        faq_section_2: 'Variant 2'
+        faq_section_3: 'Variant 3'
+        faq_section_4: 'Variant 4'
+        faq_section_5: 'Variant 5'
+        faq_section_6: 'Variant 6'
+      default: faq_section_1
+      type: button_group
+      display: Variant
+  -
+    handle: title
+    field:
+      type: text
+      display: Title
+  -
+    import: rich_text
+  -
+    handle: faq_items
+    field:
+      type: replicator
+      display: 'FAQ Items'
+      sets:
+        faq:
+          display: FAQ
+          sets:
+            faq_section:
+              display: 'FAQ Section'
+              fields:
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                -
+                  import: rich_text
+                -
+                  import: button

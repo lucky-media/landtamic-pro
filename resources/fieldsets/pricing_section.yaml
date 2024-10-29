@@ -1,0 +1,132 @@
+title: 'Pricing Section'
+fields:
+  -
+    handle: version
+    field:
+      options:
+        pricing_1: 'Variant 1'
+        pricing_2: 'Variant 2'
+        pricing_3: 'Variant 3'
+        pricing_4: 'Variant 4'
+        pricing_5: 'Variant 5'
+      display: Variant
+      type: button_group
+      default: pricing_1
+  -
+    handle: title
+    field:
+      display: Title
+      type: text
+  -
+    import: set_description
+  -
+    handle: prices
+    field:
+      collapse: accordion
+      display: Prices
+      type: replicator
+      sets:
+        main:
+          display: Main
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: title
+                  field:
+                    display: Title
+                    type: text
+                    instructions: 'Enter price title, ex: Starter, Professional, Growth'
+                    validate:
+                      - required
+                -
+                  handle: light_icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: 'Light Icon'
+                    width: 50
+                -
+                  handle: dark_icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: 'Dark Icon'
+                    width: 50
+                -
+                  handle: price
+                  field:
+                    display: Price
+                    type: text
+                    width: 50
+                    instructions: 'Enter item price, ex: $5, $10 etc.'
+                -
+                  handle: duration
+                  field:
+                    display: Duration
+                    type: text
+                    instructions: 'daily, weekly, monthly, yearly'
+                    width: 50
+                -
+                  handle: has_additional_price
+                  field:
+                    type: toggle
+                    display: 'Has additional price'
+                -
+                  handle: additional_price
+                  field:
+                    type: text
+                    display: 'Additional price'
+                    width: 50
+                    if:
+                      has_additional_price: 'equals true'
+                -
+                  handle: additional_duration
+                  field:
+                    type: text
+                    display: 'Additional duration'
+                    width: 50
+                    if:
+                      has_additional_price: 'equals true'
+                -
+                  import: rich_text
+                -
+                  handle: features
+                  field:
+                    collapse: accordion
+                    display: Features
+                    type: replicator
+                    sets:
+                      feature:
+                        display: Feature
+                        fields:
+                          -
+                            handle: title
+                            field:
+                              input_type: text
+                              antlers: false
+                              display: Title
+                              type: text
+                              icon: text
+                              listable: hidden
+                -
+                  handle: featured
+                  field:
+                    display: Featured
+                    type: toggle
+                    instructions: 'Select this item as featured'
+                    width: 50
+                -
+                  handle: featured_name
+                  field:
+                    display: 'Featured Name'
+                    type: text
+                    instructions: 'Featured price name, ex: Most Popular, Customer Favorite etc.'
+                    width: 50
+                    if:
+                      featured: 'equals true'
+                -
+                  import: button

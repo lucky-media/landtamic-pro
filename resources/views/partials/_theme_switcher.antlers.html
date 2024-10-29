@@ -1,0 +1,5 @@
+{{ if theme:custom_colors }}
+    {{ partial src="/partials/themes/custom" }}
+{{ else }}
+    {{ partial src="/partials/themes/{theme:color_swatches}" }}
+{{ /if }}

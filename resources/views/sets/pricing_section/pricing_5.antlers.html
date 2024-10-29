@@ -1,0 +1,58 @@
+<div class="bg-dark-900">
+    <div class="container py-20">
+        <div class="mb-16 max-w-3xl mx-auto text-center">
+            {{ if title }}
+                <x-heading color="white">{{ title }}</x-heading>
+            {{ /if }}
+            {{ if has_description }}
+                <x-richtext size="lg" class="mt-2" color="light-gray">{{ description }}</x-richtext>
+            {{ /if }}
+        </div>
+        {{ if prices }}
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-center">
+                {{ prices }}
+                    <div
+                        class="flex flex-col items-center px-5 bg-white dark:bg-dark-900 border border-primary-200 dark:border-dark-600 p-6 xl:py-14 rounded-2xl">
+                        {{ if light_icon || dark_icon }}
+                            <div class="inline-block bg-primary-100 dark:bg-primary-700 p-5 rounded-full mb-8">
+                                <div class="dark:hidden">
+                                    {{ partial:components/picture :image="light_icon" class="size-6 shrink-0" }}
+                                </div>
+                                <div class="hidden dark:block">
+                                    {{ partial:components/picture :image="dark_icon" class="size-6 shrink-0" }}
+                                </div>
+                            </div>
+                        {{ /if }}
+                        <x-heading size="h4" class="mb-2">{{ title }}</x-heading>
+                        {{ if price }}
+                            <div class="flex items-end mb-8">
+                                <x-heading size="h5" class="-mb-0.5">{{ price }}</x-heading>
+                                {{ if duration }}
+                                    <x-paragraph size="xl" color="gray">/{{ duration }}</x-paragraph>
+                                {{ /if }}
+                            </div>
+                        {{ /if }}
+                        {{ if features }}
+                            <ul>
+                                {{ features }}
+                                    <li class="flex items-center py-2">
+                                        {{ svg src="check" class="size-6 mr-3 fill-primary-700" }}
+                                        <x-paragraph color="gray">{{ title }}</x-paragraph>
+                                    </li>
+                                {{ /features }}
+                            </ul>
+                        {{ /if }}
+                        {{ if toggle and label }}
+                            <div class="flex mt-8">
+                                <x-button url="{{ link }}" target="{{ target_blank ?? '_self' }}"
+                                    variant="{{ button_variant }}" size="{{ button_size }}">
+                                    {{ label }}
+                                </x-button>
+                            </div>
+                        {{ /if }}
+                    </div>
+                {{ /prices }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

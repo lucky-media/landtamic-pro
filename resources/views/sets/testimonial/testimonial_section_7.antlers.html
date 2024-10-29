@@ -1,0 +1,44 @@
+<div class="py-20 bg-primary-100 dark:bg-dark-800 md:py-32">
+    <div class="container">
+        <div class="lg:w-5/6 mx-auto grid grid-cols-1 lg:grid-cols-2 items-start gap-x-8 gap-y-11">
+            <div class="relative max-w-lg -mt-12">
+                {{ svg src="quote" class="absolute size-36 opacity-30 -left-20 -top-14 fill-white" }}
+                <div class="relative z-10">
+                    {{ if title }}
+                        <x-heading>{{ title }}</x-heading>
+                    {{ /if }}
+                    {{ if has_description }}
+                        <x-richtext size="xl" class="mt-2">{{ description }}</x-richtext>
+                    {{ /if }}
+                </div>
+            </div>
+
+            {{ testimonials }}
+                <div class="p-5 bg-white dark:bg-dark-700 rounded-lg lg:max-w-lg md:p-8 shadow-md
+                    {{ index % 2 === 1 ? 'lg:-mt-48 lg:ml-auto' : '' }}">
+                    {{ if image }}
+                        {{ partial:components/picture class="object-contain mb-8 max-h-7" }}
+                    {{ /if }}
+                    <div class="flex items-start">
+                        {{ svg src="quote" class="shrink-0 size-6 mr-4 -mt-1 dark:fill-white opacity-20" }}
+                        <div>
+                            {{ if rich_text }}
+                                <x-richtext color="dark">{{ rich_text }}</x-richtext>
+                            {{ /if }}
+                            {{ if has_author }}
+                                <div class="mt-6">
+                                    <x-heading class="!text-lg font-bold">
+                                        {{ full_name }}
+                                    </x-heading>
+                                    {{ if position }}
+                                        <x-paragraph size="sm" color="gray">{{ position }}</x-paragraph>
+                                    {{ /if }}
+                                </div>
+                            {{ /if }}
+                        </div>
+                    </div>
+                </div>
+            {{ /testimonials }}
+        </div>
+    </div>
+</div>

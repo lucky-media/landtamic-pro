@@ -1,0 +1,17 @@
+{{ $menu_align = switch(
+                  (align == 'left') => 'mx-auto md:mx-0 md:mr-auto',
+                  (align == 'right') => 'mx-auto md:mx-0 md:ml-auto',
+                  () => 'mx-auto') }}
+<ul class="flex flex-col md:flex-row items-center {{ $menu_align }}">
+    {{ nav :handle="structure" }}
+        <li class="flex flex-col md:flex-row items-center">
+            <a href="{{ url }}" aria-label="{{ title }}"
+                class="px-2 text-sm text-dark-600 dark:text-dark-400 transition-all duration-300 ease-in-out hover:text-secondary-900 hover:underline">
+                {{ title }}
+            </a>
+            {{ if !last }}
+                <span class="text-xs text-dark-600 dark:text-dark-400 max-md:rotate-90">|</span>
+            {{ /if }}
+        </li>
+    {{ /nav }}
+</ul>

@@ -1,0 +1,21 @@
+<div class="container py-20">
+    {{ if title }}
+        <x-heading class="text-center max-w-2xl mx-auto mb-20">
+            {{ title }}
+        </x-heading>
+    {{ /if }}
+    {{ if faq_items }}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {{ faq_items }}
+                <div class="space-y-4">
+                    {{ if title }}
+                        <x-heading size="h5">{{ title }}</x-heading>
+                    {{ /if }}
+                    {{ if rich_text }}
+                        <x-richtext size="lg">{{ rich_text }}</x-richtext>
+                    {{ /if }}
+                </div>
+            {{ /faq_items }}
+        </div>
+    {{ /if }}
+</div>

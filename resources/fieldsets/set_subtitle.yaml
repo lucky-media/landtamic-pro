@@ -1,0 +1,16 @@
+title: 'Set Subtitle'
+fields:
+  -
+    handle: has_subtitle
+    field:
+      type: toggle
+      display: 'Has Subtitle'
+      width: 50
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+      if:
+        has_subtitle: 'equals true'
+      width: 50

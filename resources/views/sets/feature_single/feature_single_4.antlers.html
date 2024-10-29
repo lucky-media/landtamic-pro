@@ -1,0 +1,27 @@
+<div class="container relative py-20">
+    <div
+        class="max-lg:hidden absolute lg:bg-dark-100 bg-dark-900 dark:bg-white lg:dark:bg-dark-700 rounded-2xl lg:h-80 xl:h-96 inset-0 -z-10 top-1/2 -translate-y-1/2">
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center max-lg:gap-36">
+        <div class="p-5 xl:p-20 rounded-lg dark:max-lg:bg-dark-700 max-lg:bg-dark-100">
+            <x-heading size="h3">
+                {{ title }}
+            </x-heading>
+            {{ if has_description }}
+                <x-richtext size="lg" class="mt-8"> {{ description }} </x-richtext>
+            {{ /if }}
+            {{ if toggle and label }}
+                <x-action-link href="{{ link }}" target_blank="{{ target_blank }}" color="{{ button_variant }}"
+                    size="{{ button_size }}" class="mt-4 xl:mt-8">
+                    {{ label }}
+                </x-action-link>
+            {{ /if }}
+        </div>
+        {{ if image }}
+            <div class="place-self-center relative h-[570px] xl:h-[640px]">
+                {{ partial:components/picture cover="true" }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div x-data="{ isSubMenuOpen: false, isMenuOpen: false, isMobile: false, isDesktop: false, openTimeout: null, closeTimeout: null }"
+    x-resize="isMobile = ($width < 1024)">
+
+    <nav aria-labelledby="nav-heading" :aria-expanded="isMenuOpen"
+        @keydown.escape="isMenuOpen = false; isSubMenuOpen = false"
+        @click.outside="isMenuOpen = false; isSubMenuOpen = false" class="relative">
+        <div class="bg-transparent lg:py-6 py-5 min-h-[70px] lg:min-h-[90px]">
+            <div class="container">
+                <template x-if="isMobile">
+                    {{ partial:layout/navigation/mobile }}
+                </template>
+
+                <template x-if="!isMobile">
+                    {{ partial:layout/navigation/desktop }}
+                </template>
+            </div>
+        </div>
+        {{ nav:navigation }}
+            {{ if children }}
+               <div x-cloak x-show.important="isSubMenuOpen"
+                    @mouseleave="closeTimeout = setTimeout(() => { isSubMenuOpen = false }, 300)"
+                    @mouseenter="clearTimeout(closeTimeout); openTimeout = setTimeout(() => { isSubMenuOpen = true }, 200)">
+                        {{ partial:partials/sub_menu }}
+                </div>
+            {{ /if }}
+        {{ /nav:navigation }}
+    </nav>
+</div>

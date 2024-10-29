@@ -1,0 +1,26 @@
+<div class="container py-16">
+    <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+        {{ if image }}
+            <div class="p-10 rounded-full aspect-square bg-primary-100 dark:bg-dark-800 lg:p-16">
+                {{ partial:components/picture cover="true" }}
+            </div>
+        {{ /if }}
+        <div class="max-w-lg">
+            {{ if has_subtitle }}
+                <x-paragraph size="sm" color="primary" weight="semibold" class="mb-2 tracking-widest uppercase">
+                    {{ subtitle }}
+                </x-paragraph>
+            {{ /if }}
+            <x-heading size="h3">{{ title }}</x-heading>
+            {{ if has_description }}
+                <x-richtext size="lg" class="mt-10">{{ description }}</x-richtext>
+            {{ /if }}
+            {{ if toggle and label }}
+                <x-action-link href="{{ link }}" target_blank="{{ target_blank }}" color="{{ button_variant }}"
+                    size="{{ button_size }}" class="mt-10">
+                    {{ label }}
+                </x-action-link>
+            {{ /if }}
+        </div>
+    </div>
+</div>

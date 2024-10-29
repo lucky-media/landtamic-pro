@@ -1,0 +1,25 @@
+{{ $menu_classes = switch(
+                    (theme:menu_position == 'center') => 'mx-auto',
+                    (theme:menu_position == 'right' and theme:logo_position == 'center') => 'ml-auto',
+                    (theme:menu_position == 'left' and theme:logo_position == 'center') => 'lg:order-first',
+                    (theme:menu_position == 'left' and theme:logo_position != 'center') => 'lg:mr-auto lg:pl-8') }}
+<div class="flex flex-row flex-wrap items-center justify-between">
+    {{ partial:layout/navigation/logo }}
+    <div class="flex flex-row items-center {{ $menu_classes }}" :class="{ 'block shadow-3xl': isMenuOpen }">
+        <ul class="flex flex-row w-full divide-primary-200 dark:divide-dark-600 items-center divide-y-0 md:space-x-8">
+            {{ nav:navigation include_home="true" }}
+                {{ partial:components/menu_item }}
+            {{ /nav:navigation }}
+        </ul>
+    </div>
+    <div class="flex flex-row items-center">
+        {{ if theme:show_links }}
+            {{ partial:components/menu_buttons variant="desktop" }}
+        {{ /if }}
+        {{ if theme:enable_dark_mode }}
+            <div class="ml-6">
+                {{ partial:partials/theme_toggle }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

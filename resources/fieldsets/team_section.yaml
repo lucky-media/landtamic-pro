@@ -1,0 +1,60 @@
+title: 'Team Section'
+fields:
+  -
+    handle: version
+    field:
+      options:
+        team_section_1: 'Variant 1'
+        team_section_2: 'Variant 2'
+        team_section_3: 'Variant 3'
+        team_section_4: 'Variant 4'
+        team_section_5: 'Variant 5'
+      display: 'Team Variant'
+      default: team_section_1
+      type: button_group
+      validate:
+        - required
+  -
+    handle: title
+    field:
+      display: Title
+      type: text
+  -
+    import: set_description
+  -
+    handle: members
+    field:
+      display: Members
+      type: replicator
+      sets:
+        main:
+          display: Main
+          sets:
+            set:
+              display: Set
+              fields:
+                -
+                  handle: image
+                  field:
+                    mode: grid
+                    container: assets
+                    max_files: 1
+                    display: Image
+                    type: assets
+                    instructions: 'Member image'
+                -
+                  handle: full_name
+                  field:
+                    display: 'Full Name'
+                    type: text
+                    validate:
+                      - required
+                -
+                  handle: position
+                  field:
+                    display: Position
+                    type: text
+                -
+                  import: rich_text
+                -
+                  import: social_media

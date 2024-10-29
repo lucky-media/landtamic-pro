@@ -1,0 +1,39 @@
+ <div class="container py-20">
+     <div class="mb-16 max-w-3xl mx-auto text-center">
+         {{ if title }}
+             <x-heading>{{ title }}</x-heading>
+         {{ /if }}
+         {{ if has_description }}
+             <x-richtext size="lg" class="mt-2">{{ description }}</x-richtext>
+         {{ /if }}
+     </div>
+     {{ if prices }}
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+             {{ prices }}
+                 <div
+                     class="p-5 bg-primary-100 dark:bg-dark-800 border border-primary-200 dark:border-dark-600 rounded-2xl">
+                     <div class="mb-8">
+                         <x-heading size="h4">{{ title }}</x-heading>
+                         {{ if rich_text }}
+                             <x-richtext class="mt-4">{{ rich_text }}</x-richtext>
+                         {{ /if }}
+                     </div>
+                     {{ if price }}
+                         <div class="flex items-end">
+                             <x-heading size="h4" class="text-center -mb-1">{{ price }}</x-heading>
+                             {{ if duration }}
+                                 <x-paragraph size="xl" color="gray">/{{ duration }}</x-paragraph>
+                             {{ /if }}
+                         </div>
+                     {{ /if }}
+                     {{ if toggle and label }}
+                         <x-button url="{{ link }}" target="{{ target_blank ?? '_self' }}"
+                             variant="{{ button_variant }}" size="{{ button_size }}" class="mt-8">
+                             {{ label }}
+                         </x-button>
+                     {{ /if }}
+                 </div>
+             {{ /prices }}
+         </div>
+     {{ /if }}
+ </div>

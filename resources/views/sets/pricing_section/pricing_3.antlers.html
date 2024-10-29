@@ -1,0 +1,49 @@
+<div class="container py-20">
+    <div class="mb-16 max-w-3xl mx-auto text-center">
+        {{ if title }}
+            <x-heading>{{ title }}</x-heading>
+        {{ /if }}
+        {{ if has_description }}
+            <x-richtext size="lg" class="mt-2">{{ description }}</x-richtext>
+        {{ /if }}
+    </div>
+    {{ if prices }}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {{ prices }}
+                <div
+                    class="p-5 md:p-14 rounded-2xl border border-primary-200 dark:border-dark-600 px-5 flex flex-col items-center dark:shadow-md">
+                    <div class="flex flex-col items-center">
+                        <x-heading size="h4">{{ title }}</x-heading>
+                        {{ if light_icon || dark_icon }}
+                            <div class="inline-block bg-primary-100 dark:bg-primary-700 p-5 rounded-full my-4">
+                                <div class="dark:hidden">
+                                    {{ partial:components/picture :image="light_icon" class="size-6 shrink-0" }}
+                                </div>
+                                <div class="hidden dark:block">
+                                    {{ partial:components/picture :image="dark_icon" class="size-6 shrink-0" }}
+                                </div>
+                            </div>
+                        {{ /if }}
+                        {{ if price }}
+                            <div class="flex items-end text-center">
+                                <x-heading size="h4" class="text-center -mb-1">{{ price }}</x-heading>
+                                {{ if duration }}
+                                    <x-paragraph size="xl" color="gray">/{{ duration }}</x-paragraph>
+                                {{ /if }}
+                            </div>
+                        {{ /if }}
+                        {{ if rich_text }}
+                            <x-richtext size="lg" class="mt-8 text-center">{{ rich_text }}</x-richtext>
+                        {{ /if }}
+                    </div>
+                    {{ if toggle and label }}
+                        <x-button url="{{ link }}" target="{{ target_blank ?? '_self' }}"
+                            variant="{{ button_variant }}" size="{{ button_size }}" class="mt-8">
+                            {{ label }}
+                        </x-button>
+                    {{ /if }}
+                </div>
+            {{ /prices }}
+        </div>
+    {{ /if }}
+</div>

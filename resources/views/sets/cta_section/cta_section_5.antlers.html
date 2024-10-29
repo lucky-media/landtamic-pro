@@ -1,0 +1,26 @@
+<div class="bg-white dark:bg-dark-900">
+    <div class="py-16 container">
+        <div class="relative overflow-hidden bg-primary-700 rounded-2xl max-md:pb-64">
+            <div class="max-w-xl max-md:text-center p-5 md:py-12 md:pl-12 xl:pl-24">
+                <x-heading color="white">{{ title }}</x-heading>
+                {{ if toggle and label }}
+                    <div
+                        class="flex flex-col items-center mt-5 md:mt-11 space-y-2 md:items-stretch md:space-y-0 md:flex-row">
+                        <input type="email" placeholder="Your work email address"
+                            class="w-full py-3 text-center border-none rounded-md md:text-left md:w-64 lg:w-72 md:rounded-none md:rounded-l-md" />
+                        <x-button variant="{{ button_variant }}" size="{{ button_size }}"
+                            class="text-white bg-primary-500 md:rounded-l-none max-md:w-full min-w-max">
+                            {{ label }}
+                        </x-button>
+                    </div>
+                {{ /if }}
+            </div>
+
+            <div class="absolute right-1/2 md:right-0 top-2/3 md:top-1/2 md:-translate-y-1/2">
+                <div
+                    class="size-[474px] bg-primary-100 rounded-full ring-[50px] ring-primary-100/50 opacity-20 translate-x-1/2 md:translate-x-2/3 lg:translate-x-1/4">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

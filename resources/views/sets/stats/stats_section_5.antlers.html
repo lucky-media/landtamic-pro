@@ -1,0 +1,16 @@
+<div class="container py-16">
+    <div class="grid gap-8 md:gap-11 grid-cols-1 md:grid-cols-3">
+        {{ stats }}
+            <div>
+                <x-heading>
+                    {{ number }}
+                </x-heading>
+                {{ if rich_text }}
+                    <x-richtext>
+                        {{ rich_text }}
+                    </x-richtext>
+                {{ /if }}
+            </div>
+        {{ /stats }}
+    </div>
+</div>

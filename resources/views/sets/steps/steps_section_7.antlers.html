@@ -1,0 +1,29 @@
+<div class="container py-16">
+    <div class="text-center max-w-3xl mx-auto">
+        <x-heading>{{ title }}</x-heading>
+        {{ if has_description }}
+            <x-richtext size="lg" class="mt-2">{{ description }}</x-richtext>
+        {{ /if }}
+    </div>
+    {{ if steps }}
+        <div class="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-16">
+            {{ steps }}
+                <div
+                    class="bg-primary-100 dark:bg-dark-800 rounded-2xl flex flex-col items-center text-center px-6 pb-6">
+                    <div
+                        class="size-12 bg-primary-700 dark:bg-primary-100 rounded-2xl flex items-center justify-center -translate-y-1/2">
+                        <span class="text-white font-semibold text-3xl dark:text-dark-500">
+                            {{ index + 1 }}
+                        </span>
+                    </div>
+                    <x-heading size="h6">
+                        {{ title }}
+                    </x-heading>
+                    {{ if description }}
+                        <x-paragraph class="mt-4">{{ description }}</x-paragraph>
+                    {{ /if }}
+                </div>
+            {{ /steps }}
+        </div>
+    {{ /if }}
+</div>

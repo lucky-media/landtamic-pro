@@ -1,0 +1,26 @@
+<div class="container py-16">
+    <x-heading class="max-w-3xl text-center mx-auto">{{ title }}</x-heading>
+    {{ if steps }}
+        <div class="grid gap-8 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-12 p-4">
+            {{ steps }}
+                <div class="flex flex-col items-center text-center">
+                    {{ if light_icon || dark_icon }}
+                        <div
+                            class="shrink-0 size-40 rounded-full bg-primary-100 dark:bg-dark-800 flex items-center justify-center">
+                            <div class="dark:hidden">
+                                {{ partial:components/picture :image="light_icon" class="size-44 shrink-0" }}
+                            </div>
+                            <div class="hidden dark:block">
+                                {{ partial:components/picture :image="dark_icon" class="size-44 shrink-0" }}
+                            </div>
+                        </div>
+                    {{ /if }}
+                    <x-heading size="h5" class="mt-6">{{ title }}</x-heading>
+                    {{ if description }}
+                        <x-paragraph color="gray" class="mt-1">{{ description }}</x-paragraph>
+                    {{ /if }}
+                </div>
+            {{ /steps }}
+        </div>
+    {{ /if }}
+</div>

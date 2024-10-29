@@ -1,0 +1,14 @@
+<label
+    class="py-8 rounded-lg duration-200 ease-in-out bg-gray-50 dark:bg-dark-800 border border-dark-200 dark:border-dark-600 hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-dark-600">
+    <span class="flex flex-col items-center">
+        {{ svg src="upload" class="shrink-0 size-20 fill-primary-700" }}
+        <span class="text-sm text-dark-800 dark:text-white">
+            {{ instructions or 'Drop your file here' }}
+        </span>
+        {{ if max_files === 1 }}
+            <input type="file" name="{{ handle }}" class="hidden">
+        {{ else }}
+            <input type="file" name="{{ handle }}[]" class="hidden" multiple>
+        {{ /if }}
+    </span>
+</label>

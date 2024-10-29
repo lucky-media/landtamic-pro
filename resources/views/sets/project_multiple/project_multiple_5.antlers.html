@@ -1,0 +1,17 @@
+{{ $main_title = title }}
+<div class="my-20">
+    {{ if projects }}
+        <div class="container grid md:gap-x-10 xl:gap-x-28 gap-y-10 xl:gap-y-20 grid-cols-1 lg:grid-cols-2">
+            {{ projects }}
+                {{ partial:components/project_card }}
+            {{ /projects }}
+        </div>
+    {{ /if }}
+    {{ if has_link }}
+        <div class="container flex justify-end max-lg:mt-10">
+            <x-action-link href="{{ link }}" target_blank="{{ target_blank }}" size="xl">
+                {{ label }}
+            </x-action-link>
+        </div>
+    {{ /if }}
+</div>

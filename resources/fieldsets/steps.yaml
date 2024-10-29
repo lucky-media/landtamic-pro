@@ -1,0 +1,69 @@
+title: Steps
+fields:
+  -
+    handle: version
+    field:
+      options:
+        steps_section_1: 'Variant 1'
+        steps_section_2: 'Variant 2'
+        steps_section_3: 'Variant 3'
+        steps_section_4: 'Variant 4'
+        steps_section_5: 'Variant 5'
+        steps_section_6: 'Variant 6'
+        steps_section_7: 'Variant 7'
+      display: 'Step Variant'
+      default: steps_section_1
+      type: button_group
+      instructions: 'Please select a step variant'
+      validate:
+        - required
+  -
+    handle: title
+    field:
+      display: Title
+      type: text
+      validate:
+        - required
+  -
+    import: set_description
+  -
+    handle: steps
+    field:
+      collapse: accordion
+      display: Steps
+      type: replicator
+      sets:
+        main:
+          display: Main
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: light_icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: 'Light Icon'
+                    width: 50
+                -
+                  handle: dark_icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: 'Dark Icon'
+                    width: 50
+                -
+                  handle: title
+                  field:
+                    display: Title
+                    type: text
+                    validate:
+                      - required
+                -
+                  handle: description
+                  field:
+                    display: Description
+                    type: textarea

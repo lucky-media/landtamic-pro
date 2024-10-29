@@ -1,0 +1,33 @@
+<div class="container py-20">
+    {{ if title }}
+        <x-heading class="text-center max-w-2xl mx-auto mb-20">
+            {{ title }}
+        </x-heading>
+    {{ /if }}
+    {{ if faq_items }}
+        <x-accordion>
+            {{ faq_items }}
+                <x-accordion.item class="border-b-2 border-primary-200 dark:border-dark-600">
+                    <x-accordion.trigger class="flex items-center justify-between pb-3 pt-7">
+                        {{ if title }}
+                            <x-heading size="h5" class="text-left">{{ title }}</x-heading>
+                        {{ /if }}
+                        <div class="ml-2">
+                            <div x-show="!show">
+                                {{ svg src="plus" class="size-5 shrink-0 fill-dark-400" }}
+                            </div>
+                            <div x-cloak x-show="show">
+                                {{ svg src="minus" class="size-5 shrink-0 fill-dark-900 dark:fill-white" }}
+                            </div>
+                        </div>
+                    </x-accordion.trigger>
+                    <x-accordion.content>
+                        <x-richtext size="lg" class="pb-4">
+                            {{ rich_text }}
+                        </x-richtext>
+                    </x-accordion.content>
+                </x-accordion.item>
+            {{ /faq_items }}
+        </x-accordion>
+    {{ /if }}
+</div>

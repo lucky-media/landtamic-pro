@@ -1,0 +1,66 @@
+title: Stats
+fields:
+  -
+    handle: version
+    field:
+      options:
+        stats_section_1: 'Variant 1'
+        stats_section_2: 'Variant 2'
+        stats_section_3: 'Variant 3'
+        stats_section_4: 'Variant 4'
+        stats_section_5: 'Variant 5'
+        stats_section_6: 'Variant 6'
+        stats_section_7: 'Variant 7'
+      display: Variant
+      default: stats_section_1
+      type: button_group
+      instructions: 'Please select a stats variant'
+      validate:
+        - required
+  -
+    handle: title
+    field:
+      display: Title
+      type: text
+  -
+    import: set_description
+  -
+    handle: stats
+    field:
+      collapse: accordion
+      display: Stats
+      type: replicator
+      validate:
+        - required
+      sets:
+        main:
+          display: Main
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: light_icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: 'Light Icon'
+                    width: 50
+                -
+                  handle: dark_icon
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: 'Dark Icon'
+                    width: 50
+                -
+                  handle: number
+                  field:
+                    display: Number
+                    type: text
+                    validate:
+                      - required
+                -
+                  import: rich_text

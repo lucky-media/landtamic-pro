@@ -1,0 +1,22 @@
+<div class="py-12 lg:py-20 bg-primary-100 dark:bg-dark-800">
+    <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-8">
+            <div class="max-w-xl">
+                <x-heading size="h4">{{ title }}</x-heading>
+                {{ if has_description }}
+                    <x-richtext size="lg" class="mt-4">{{ description }}</x-richtext>
+                {{ /if }}
+                {{ if has_link }}
+                    <x-action-link href="{{ link }}" target_blank="{{ target_blank }}" size="xl" class="mt-8">
+                        {{ label }}
+                    </x-action-link>
+                {{ /if }}
+            </div>
+            {{ if image }}
+                <div class="place-self-center">
+                    {{ partial:components/picture class="object-contain w-full max-h-[640px]" }}
+                </div>
+            {{ /if }}
+        </div>
+    </div>
+</div>

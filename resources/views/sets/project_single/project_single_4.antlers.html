@@ -1,0 +1,17 @@
+<div class="container py-12 lg:py-20">
+    <div
+        class="relative rounded-lg bg-primary-800 dark:bg-dark-800 grid grid-cols-1 lg:grid-cols-2 items-center lg:gap-8 gap-28">
+        <div class="px-4 lg:px-16 xl:px-24 max-lg:pt-8 max-lg:max-w-lg">
+            <x-heading size="h4" color="white">{{ title }}</x-heading>
+            {{ if has_description }}
+                <x-richtext size="lg" color="white" class="mt-4">{{ description }}</x-richtext>
+            {{ /if }}
+        </div>
+        {{ if image }}
+            <div class="relative overflow-hidden flex justify-center max-lg:pt-10">
+                {{ svg src="circle-pattern" class="absolute size-96 lg:mt-4 -mt-8" }}
+                {{ partial:components/picture class="max-h-[520px] z-10 translate-y-[15%]" }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

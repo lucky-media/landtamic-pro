@@ -1,0 +1,17 @@
+<div class="border-t border-primary-200 dark:border-dark-600">
+    <ul class="flex max-md:flex-col divide-x divide-primary-200 dark:divide-dark-600 gap-6 pt-6">
+        <li class="text-dark-900 dark:text-white">Posted on:
+            {{ date }}
+        </li>
+        {{ if author }}
+            <li class="text-dark-900 dark:text-white pl-6">By:
+                {{ author:name }}
+            </li>
+        {{ /if }}
+        {{ if category }}
+            <li class="text-dark-900 dark:text-white pl-6">On:
+                {{ category:title }}
+            </li>
+        {{ /if }}
+    </ul>
+</div>

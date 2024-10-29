@@ -1,0 +1,245 @@
+title: Theme
+data:
+  logo_normal: images/dark.svg
+  logo_dark: images/light.svg
+  logo_mark: images_all/white.svg
+  custom_colors: false
+  color_swatches: purple
+  enable_dark_mode: true
+  logo_position: left
+  menu_position: right
+  show_links: true
+  links:
+    -
+      id: BERxnZHF
+      toggle: true
+      label: Login
+      link: '#'
+      button_variant: secondary
+      button_size: md
+      target_blank: false
+      type: button
+      enabled: false
+    -
+      id: lzTTBofA
+      toggle: true
+      label: Register
+      link: '#'
+      button_variant: primary
+      button_size: md
+      target_blank: false
+      type: button
+      enabled: true
+    -
+      id: nf7PhgCx
+      image: images/apple-store.png
+      aria_label: 'Apple Store Link'
+      link: 'https://www.apple.com'
+      type: image_link
+      enabled: true
+    -
+      id: 3XZwZqQg
+      image: images/play-store.png
+      aria_label: 'Play Store'
+      link: 'https://play.google.com/'
+      type: image_link
+      enabled: false
+    -
+      id: sMuJQfsH
+      toggle_social: true
+      social_title: 'Social Media'
+      social:
+        -
+          id: MQBfpZZ5
+          title: Twitter
+          url: 'https://x.com'
+          icon: social/twitter-1641400598.svg
+        -
+          id: H8Smll0M
+          title: Facebook
+          url: 'https://www.facebook.com'
+          icon: social/facebook-1641400589.svg
+        -
+          id: GBvgdrzd
+          title: Dribble
+          url: 'https://dribble.com'
+          icon: social/dribbble-1641400584.svg
+        -
+          id: KU9HyX3b
+          title: Instagram
+          url: 'https://www.instagram.com'
+          icon: social/Instagram-1641400598.svg
+        -
+          id: jpG9khKh
+          title: Behance
+          url: 'https://www.behance.net'
+          icon: social/behance-1641400629.svg
+        -
+          id: uI9VCbRT
+          title: Github
+          url: 'https://github.com'
+          icon: social/github-1641400598.svg
+        -
+          id: 0NEOtBhU
+          title: Linkedin
+          url: 'https://www.linkedin.com/'
+          icon: social/linkedIn-1641400598.svg
+        -
+          id: S37nd2nI
+          title: Pinterest
+          url: 'https://www.pinterest.com/'
+          icon: social/pinterest-1641400598.svg
+        -
+          id: bc8O8aIk
+          title: Youtube
+          url: 'https://www.youtube.com/'
+          icon: social/youtube-1641400598.svg
+      type: social_media
+      enabled: true
+  has_menu: true
+  footer_menu: footer_nav
+  custom_column: true
+  span_column: false
+  footer_column:
+    -
+      id: j2rzys3i
+      image: images/Light.svg
+      type: image
+      enabled: true
+      logo_normal: images/dark.svg
+      logo_dark: images/light.svg
+    -
+      id: lEesJA9d
+      rich_text:
+        -
+          type: paragraph
+          content:
+            -
+              type: text
+              text: "Copyright © {{ now format=\"Y\" }}. Landtamic - Statamic Starter Kit. Made with ❤️ by\_"
+            -
+              type: text
+              marks:
+                -
+                  type: link
+                  attrs:
+                    href: 'https://www.luckymedia.dev/?ref=Landtamic'
+                    rel: 'noopener noreferrer'
+                    target: _blank
+                    title: null
+                -
+                  type: bold
+              text: 'Lucky Media'
+      type: copyright
+      enabled: true
+    -
+      id: FYsLgTS8
+      toggle_social: true
+      social_media:
+        -
+          icon: twitter
+          url: 'https://www.twitter.com'
+          type: social_media
+          enabled: true
+        -
+          icon: instagram
+          url: 'https://www.instagram.com'
+          type: social_media
+          enabled: true
+        -
+          icon: facebook
+          url: 'https://www.facebook.com'
+          type: social_media
+          enabled: true
+        -
+          icon: linkedin
+          url: 'https://www.linkedin.com'
+          type: social_media
+          enabled: true
+      type: social_media
+      enabled: true
+      social:
+        -
+          id: mHV2GK4I
+          title: Twitter
+          url: 'https://x.com'
+          icon: social/twitter-1641400598.svg
+        -
+          id: m8xtawPM
+          title: Github
+          url: 'https://github.com'
+          icon: social/github-1641400598.svg
+        -
+          id: xClG2Ill
+          title: Youtube
+          url: 'https://www.youtube.com/'
+          icon: social/youtube-1641400598.svg
+  logo_overlay: true
+  logo_overlay_position: left
+  display_divider: true
+  divider_style: contained
+  footer_items:
+    -
+      id: fFwSDEXx
+      rich_text:
+        -
+          type: paragraph
+          content:
+            -
+              type: text
+              text: "Copyright © {{ now format=\"Y\" }}. Landtamic - Statamic Starter Kit. Made with ❤️ by\_"
+            -
+              type: text
+              marks:
+                -
+                  type: link
+                  attrs:
+                    href: 'https://www.luckymedia.dev/?ref=Landtamic'
+                    rel: 'noopener noreferrer'
+                    target: _blank
+                    title: null
+                -
+                  type: bold
+              text: 'Lucky Media'
+      type: copyright
+      enabled: true
+      align: center
+    -
+      id: ewjDOfNB
+      image: images/light.svg
+      type: image
+      enabled: true
+      align: center
+    -
+      id: etwjgmVT
+      structure: footer_nav
+      type: menu
+      enabled: true
+      align: right
+  favicon: favicons/favicon.ico
+  favicon_256: favicons/apple-touch-icon.png
+  favicon_192: favicons/android-chrome-192x192.png
+  favicon_180: favicons/apple-touch-icon.png
+  favicon_32: favicons/favicon-32x32.png
+  favicon_16: favicons/favicon-16x16.png
+  page_title: 'Page not found'
+  page_desc:
+    -
+      type: paragraph
+      content:
+        -
+          type: text
+          text: 'The page cannot be found.'
+  page_image: images_all/outer_space.png
+  page_image_position: left
+  page_toggle: true
+  page_label: 'Go Back'
+  page_link: /
+  page_button_variant: primary
+  page_button_size: lg
+  page_target_blank: false
+  sitemap_collections:
+    - pages
+    - posts
+  sitemap_change_frequency: weekly
+  sitemap_priority: 0.5

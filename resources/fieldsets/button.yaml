@@ -1,0 +1,53 @@
+title: Button
+fields:
+  - handle: toggle
+    field:
+      display: "Toggle Button"
+      type: toggle
+      instructions: "Display Button"
+  - handle: label
+    field:
+      display: Label
+      type: text
+      if:
+        toggle: "equals true"
+  - handle: link
+    field:
+      display: Link
+      type: link
+      if:
+        toggle: "equals true"
+  - handle: button_variant
+    field:
+      options:
+        primary: Primary
+        secondary: Secondary
+        white: White
+      default: primary
+      display: Variant
+      type: button_group
+      instructions: "Button variant, default brand."
+      width: 50
+      if:
+        toggle: "equals true"
+  - handle: button_size
+    field:
+      options:
+        md: Medium
+        lg: Large
+        xl: "Extra Large"
+      default: md
+      display: "Button Size"
+      type: button_group
+      instructions: "Select button size, default medium."
+      width: 50
+      if:
+        toggle: "equals true"
+  - handle: target_blank
+    field:
+      display: "Target Blank"
+      type: toggle
+      instructions: "Open link in new tab or window."
+      width: 50
+      if:
+        toggle: 'equals true'

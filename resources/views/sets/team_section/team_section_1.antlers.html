@@ -1,0 +1,37 @@
+<div class="bg-dark-900">
+    <div class="container py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                {{ if title }}
+                    <x-heading color="white">{{ title }}</x-heading>
+                {{ /if }}
+                {{ if has_description }}
+                    <x-richtext color="light-gray" class="mt-2">{{ description }}</x-richtext>
+                {{ /if }}
+            </div>
+            {{ if members }}
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-y-9 gap-x-8">
+                    {{ members }}
+                        <div class="flex items-center">
+                            {{ if image }}
+                                <div class="overflow-hidden shrink-0 rounded-full size-16">
+                                    {{ partial:components/picture cover="true" }}
+                                </div>
+                            {{ /if }}
+                            <div class="ml-8">
+                                <x-heading size="h6" color="white" class="font-bold mb-1.5">
+                                    {{ full_name }}
+                                </x-heading>
+                                {{ if position }}
+                                    <x-paragraph size="sm" color="light-gray" weight="medium">
+                                        {{ position }}
+                                    </x-paragraph>
+                                {{ /if }}
+                            </div>
+                        </div>
+                    {{ /members }}
+                </div>
+            {{ /if }}
+        </div>
+    </div>
+</div>

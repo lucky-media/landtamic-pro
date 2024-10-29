@@ -1,0 +1,49 @@
+<div class="py-20 bg-primary-100 dark:bg-dark-800">
+    <div class="container">
+        <div class="max-w-xl">
+            {{ if title }}
+                <x-heading>{{ title }}</x-heading>
+            {{ /if }}
+            {{ if description }}
+                <x-paragraph color="gray" class="mt-2">
+                    {{ description }}
+                </x-paragraph>
+            {{ /if }}
+        </div>
+        {{ if members }}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-24 mt-28">
+                {{ members }}
+                    <div class="flex max-lg:flex-col lg:space-x-4 max-lg:space-y-4">
+                        {{ if image }}
+                            <div class="lg:w-1/2 h-80 overflow-hidden rounded-2xl">
+                                {{ partial:components/picture cover="true" }}
+                            </div>
+                        {{ /if }}
+                        <div class="lg:w-1/2">
+                            <x-heading size="h6" class="mb-2">{{ full_name }}</x-heading>
+                            {{ if position }}
+                                <x-paragraph color="gray" weight="medium">{{ position }}</x-paragraph>
+                            {{ /if }}
+                            {{ if rich_text }}
+                                <x-richtext class="mt-8">
+                                    {{ rich_text }}
+                                </x-richtext>
+                            {{ /if }}
+                            {{ if toggle_social }}
+                                <ul class="flex space-x-2 mt-8">
+                                    {{ social }}
+                                        <li>
+                                            <x-link-wrapper link="{{ url }}" aria_label="Visit {{ title }}">
+                                                {{ svg :src="icon" class="shrink-0 size-6 text-primary-700 dark:text-white" }}
+                                            </x-link-wrapper>
+                                        </li>
+                                    {{ /social }}
+                                </ul>
+                            {{ /if }}
+                        </div>
+                    </div>
+                {{ /members }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

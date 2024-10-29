@@ -1,0 +1,17 @@
+<div class="py-16 max-md:px-4 bg-primary-100 dark:bg-dark-800 md:py-20">
+    <div class="max-w-4xl mx-auto text-center">
+        {{ if title }}
+            <x-heading>{{ title }}</x-heading>
+        {{ /if }}
+        {{ if has_description }}
+            <x-richtext size="xl" class="mt-2">{{ description }}</x-richtext>
+        {{ /if }}
+        <div class="flex flex-wrap justify-center gap-x-2 lg:gap-x-6 gap-y-2 mt-14">
+            {{ images }}
+                <div class="bg-white dark:bg-dark-700 p-2 md:p-6 rounded-lg md:rounded-2xl">
+                    {{ partial:components/picture :image="url" class="object-contain w-16 md:w-24 h-10 xl:w-36" }}
+                </div>
+            {{ /images }}
+        </div>
+    </div>
+</div>

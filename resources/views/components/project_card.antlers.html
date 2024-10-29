@@ -1,0 +1,23 @@
+<div class="
+    {{ if index == 3 }}
+        lg:-mt-28
+    {{ /if }}
+    {{ if index % 2 == 1 && index > 4 }}
+        lg:-mt-24
+    {{ /if }}
+">
+    {{ if index === 0 }}
+        <x-heading class="mb-20">{{ main_title }}</x-heading>
+    {{ /if }}
+    <div class="rounded-lg overflow-hidden h-72 lg:h-[600px]">
+        {{ partial:components/picture cover="true" }}
+    </div>
+    <x-link-wrapper link="{{ link }}" target_blank="{{ target_blank }}">
+        {{ if title }}
+            <x-heading size="h5" class="hover:text-primary-700 mt-6">{{ title }}</x-heading>
+        {{ /if }}
+    </x-link-wrapper>
+    {{ if rich_text }}
+        <x-richtext class="mt-2">{{ rich_text }}</x-richtext>
+    {{ /if }}
+</div>

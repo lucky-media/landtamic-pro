@@ -1,0 +1,13 @@
+<div class="container py-16">
+    <div class="max-w-3xl mx-auto text-center">
+        <x-heading>{{ title }}</x-heading>
+        {{ if toggle and label }}
+            <div class="mt-14">
+                <x-button url="{{ link }}" target="{{ target_blank ?? '_self' }}" variant="{{ button_variant }}"
+                    size="{{ button_size }}">
+                    {{ label }}
+                </x-button>
+            </div>
+        {{ /if }}
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container py-12 md:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
+
+        <div class="max-lg:text-center">
+            {{ if title }}
+                <x-heading class="mb-2">
+                    {{ title }}
+                </x-heading>
+            {{ /if }}
+            {{ if description }}
+                <x-richtext size="lg" class="mt-2">{{ description }}</x-richtext>
+            {{ /if }}
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:gap-x-8 gap-y-8 md:gap-y-10">
+            {{ stats }}
+                <div class="flex items-center gap-4">
+                    {{ if light_icon || dark_icon }}
+                        <div class="dark:hidden">
+                            {{ partial:components/picture :image="light_icon" class="size-12 shrink-0" }}
+                        </div>
+                        <div class="hidden dark:block">
+                            {{ partial:components/picture :image="dark_icon" class="size-12 shrink-0" }}
+                        </div>
+                    {{ /if }}
+                    <div>
+                        {{# The font size should stay static #}}
+                        <x-heading class="!text-3xl">
+                            {{ number }}
+                        </x-heading>
+                        <x-richtext>
+                            {{ rich_text }}
+                        </x-richtext>
+                    </div>
+                </div>
+            {{ /stats }}
+        </div>
+    </div>
+</div>

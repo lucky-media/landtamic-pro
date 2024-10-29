@@ -1,0 +1,9 @@
+{
+    "name": "lucky-media/landtamic-pro",
+    "extra": {
+        "statamic": {
+            "name": "Landtamic Pro",
+            "description": "Landtamic Pro starter kit"
+        }
+    }
+}

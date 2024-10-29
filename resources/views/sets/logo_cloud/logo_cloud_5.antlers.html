@@ -1,0 +1,22 @@
+{{ images = images | reverse }}
+<div class="container py-12 md:py-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <div class="max-lg:text-center max-lg:justify-self-center max-w-md">
+        {{ if title }}
+            <x-heading>{{ title }}</x-heading>
+        {{ /if }}
+        {{ if has_description }}
+            <x-richtext size="xl" class="mt-2">{{ description }}</x-richtext>
+        {{ /if }}
+    </div>
+
+    <div class="relative py-36">
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            {{ partial:partials/ui/hero_blur_circle }}
+        </div>
+        <div class="flex flex-row flex-wrap rotate-180 justify-center gap-6 lg:gap-16">
+            {{ images }}
+                {{ partial:components/picture :image="url" class="object-contain size-12 md:size-20 rotate-180 rounded-full" }}
+            {{ /images }}
+        </div>
+    </div>
+</div>

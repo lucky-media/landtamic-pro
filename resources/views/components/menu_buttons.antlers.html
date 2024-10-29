@@ -1,0 +1,17 @@
+---
+variants:
+  desktop: 'lg:inline-flex lg:space-x-4 items-center hidden'
+  mobile: 'flex justify-center pt-4 space-x-4 lg:hidden'
+---
+
+<div class="{{ view:variants[variant] }}">
+    {{ theme:links }}
+        {{ if type == 'button' }}
+            <x-button url="{{ link }}">{{ label }}</x-button>
+        {{ elseif type === 'image_link' }}
+            <a href="{{ link }}" aria-label="{{ aria_label }}" target="_blank" class="min-w-36">
+                {{ partial:components/picture class="object-contain w-full h-auto max-h-10" sizes="(min-width: 200px) 35vw, 90vw" }}
+            </a>
+        {{ /if }}
+    {{ /theme:links }}
+</div>

@@ -1,0 +1,72 @@
+---
+sliderConfig: '{ arrows: true, pagination: false }'
+---
+
+<div class="lg:container grid grid-cols-1 lg:grid-cols-2">
+    <div class="bg-dark-900 max-lg:p-4 relative">
+        <div class="absolute inset-0 bg-dark-900 -z-10 -translate-x-1/2"></div>
+
+        <div class="flex flex-col justify-center h-full max-lg:text-center max-lg:py-12 lg:max-w-xl">
+            {{ if title }}
+                <x-heading color="white">{{ title }}</x-heading>
+            {{ /if }}
+            {{ if has_description }}
+                <x-richtext size="lg" color="white" class="mt-2">{{ description }}</x-richtext>
+            {{ /if }}
+        </div>
+    </div>
+
+    <div class="bg-primary-100 dark:bg-dark-800 py-8 relative">
+        <div class="bg-white dark:bg-dark-700 px-4 py-6 lg:p-10 max-lg:m-4 relative overflow-hidden">
+            <div id="testimonial-carousel-6" x-ignore ax-load="visible"
+                x-data="slider('testimonial-carousel-6', {{ view:sliderConfig }})" class="splide">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        {{ testimonials }}
+                            <div class="splide__slide">
+                                <div class="mb-20">
+                                    {{ if has_author }}
+                                        <div class="flex items-center my-6">
+                                            {{ if image }}
+                                                <div class="size-16 overflow-hidden rounded-full">
+                                                    {{ partial:components/picture cover="true" }}
+                                                </div>
+                                            {{ /if }}
+                                            <div class="ml-4">
+                                                <x-heading class="!text-lg font-bold">
+                                                    {{ full_name }}
+                                                </x-heading>
+                                                {{ if position }}
+                                                    <x-paragraph size="sm" color="gray">{{ position }}</x-paragraph>
+                                                {{ /if }}
+                                            </div>
+                                        </div>
+                                    {{ /if }}
+                                    {{ if rich_text }}
+                                        <x-richtext>{{ rich_text }}</x-richtext>
+                                    {{ /if }}
+                                </div>
+                                {{ if company_image }}
+                                    <div>
+                                        {{ partial:components/picture :image="company_image" class="shrink-0 max-h-10" }}
+                                    </div>
+                                {{ /if }}
+                            </div>
+                        {{ /testimonials }}
+                    </div>
+                </div>
+
+                <div class="relative splide__arrows flex flex-row items-center">
+                    <button class="splide__arrow splide__arrow--prev !bg-transparent !left-36 !-top-5">
+                        {{ svg src="chevron" class="size-6 fill-dark-900 dark:fill-white !rotate-90 shrink-0" }}
+                    </button>
+                    <button class="splide__arrow splide__arrow--next !bg-transparent !left-48 !-top-5">
+                        {{ svg src="chevron" class="size-6 fill-dark-900 dark:fill-white !-rotate-90 shrink-0" }}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute inset-0 bg-primary-100 dark:bg-dark-800 -z-10 translate-x-1/2"></div>
+    </div>
+</div>

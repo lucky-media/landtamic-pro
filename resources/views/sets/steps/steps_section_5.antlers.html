@@ -1,0 +1,39 @@
+<div class="relative">
+    <div class="absolute top-0 left-0 w-full bg-primary-100 dark:bg-dark-800 h-1/2 -z-10"></div>
+
+    <div class="container pt-16 pb-32">
+        <div class="flex lg:flex-row flex-col lg:space-x-8">
+            <div class="lg:w-5/12">
+                <x-heading class="max-w-3xl max-lg:text-center">{{ title }}</x-heading>
+            </div>
+            {{ if steps }}
+                <div class="lg:w-7/12 bg-white dark:bg-dark-700 max-lg:mt-16">
+                    {{ steps }}
+                        <div
+                            class="p-5 lg:py-12 md:px-14 xl:px-20 flex items-center max-lg:text-center lg:flex-row flex-col lg:space-x-20">
+                            {{ if light_icon || dark_icon }}
+                                <div
+                                    class="size-24 shrink-0 bg-primary-100 dark:bg-primary-700 rounded-full flex items-center justify-center">
+                                    <div class="dark:hidden">
+                                        {{ partial:components/picture :image="light_icon" class="size-9 shrink-0" }}
+                                    </div>
+                                    <div class="hidden dark:block">
+                                        {{ partial:components/picture :image="dark_icon" class="size-9 shrink-0" }}
+                                    </div>
+                                </div>
+                            {{ /if }}
+                            <div class="max-w-md max-lg:mt-6">
+                                <x-heading class="!text-sm uppercase tracking-widest">
+                                    {{ title }}
+                                </x-heading>
+                                {{ if description }}
+                                    <x-paragraph size="sm" color="gray" class="mt-2">{{ description }}</x-paragraph>
+                                {{ /if }}
+                            </div>
+                        </div>
+                    {{ /steps }}
+                </div>
+            {{ /if }}
+        </div>
+    </div>
+</div>

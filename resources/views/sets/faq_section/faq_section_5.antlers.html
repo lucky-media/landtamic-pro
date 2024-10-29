@@ -1,0 +1,28 @@
+<div class="container py-20">
+    <div class="mx-auto max-w-5xl text-center mb-20">
+        {{ if title }}
+            <x-heading>{{ title }}</x-heading>
+        {{ /if }}
+        {{ if rich_text }}
+            <x-paragraph color="gray" class="mt-2">{{ rich_text }}</x-paragraph>
+        {{ /if }}
+    </div>
+    {{ if faq_items }}
+        <div class="space-y-8">
+            {{ faq_items }}
+                <div class="border-b-2 border-primary-200 dark:border-dark-600 pb-8">
+                    <div class="flex md:flex-row flex-col justify-between max-md:space-y-4 md:space-x-12">
+                        {{ if title }}
+                            <x-heading size="h5" weight="semibold" class="md:w-1/3">
+                                {{ title }}
+                            </x-heading>
+                        {{ /if }}
+                        {{ if rich_text }}
+                            <x-richtext class="md:w-2/3">{{ rich_text }}</x-richtext>
+                        {{ /if }}
+                    </div>
+                </div>
+            {{ /faq_items }}
+        </div>
+    {{ /if }}
+</div>

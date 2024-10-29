@@ -1,0 +1,15 @@
+<div class="container py-20">
+    <x-paragraph size="sm" class="mb-12 tracking-widest uppercase font-semibold max-w-3xl">
+        {{ title }}
+    </x-paragraph>
+    {{ if projects }}
+        <div class="grid gap-12 md:gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+            {{ projects }}
+                <x-link-wrapper link="{{ link }}" target_blank="{{ target_blank }}"
+                    class="overflow-hidden h-72 lg:h-80">
+                    {{ partial:components/picture cover="true" }}
+                </x-link-wrapper>
+            {{ /projects }}
+        </div>
+    {{ /if }}
+</div>

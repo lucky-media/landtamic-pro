@@ -1,0 +1,18 @@
+<div class="flex flex-row flex-wrap items-center justify-between">
+    {{ partial:layout/navigation/logo }}
+    <div class="flex items-center">
+        {{ if theme:enable_dark_mode }}
+            {{ partial:partials/theme_toggle }}
+        {{ /if }}
+        {{ partial:partials/toggle_button }}
+    </div>
+
+    <div class="w-full" :class="{ 'block shadow-3xl': isMenuOpen, 'hidden': !isMenuOpen }" x-cloak>
+        <ul class="flex flex-col w-full mt-5 divide-y divide-primary-200 dark:divide-dark-600 max-xl:space-y-4">
+            {{ nav:navigation include_home="true" }}
+                {{ partial:components/menu_item }}
+            {{ /nav:navigation }}
+            {{ partial:components/menu_buttons variant="mobile" }}
+        </ul>
+    </div>
+</div>

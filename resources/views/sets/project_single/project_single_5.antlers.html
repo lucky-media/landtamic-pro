@@ -1,0 +1,17 @@
+<div class="container py-12 lg:py-20">
+    <div class="bg-primary-100 dark:bg-dark-800 rounded-lg p-6">
+        <div class="flex lg:flex-row flex-col lg:justify-between items-center">
+            <x-heading size="h4">{{ title }}</x-heading>
+            {{ if has_link }}
+                <x-button url="{{ link }}" target="{{ target_blank ?? '_self' }}" size="md" class="max-lg:mt-2.5">
+                    {{ label }}
+                </x-button>
+            {{ /if }}
+        </div>
+        {{ if image }}
+            <div class="pt-8">
+                {{ partial:components/picture cover="true" class="max-h-[650px]" }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

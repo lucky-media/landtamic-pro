@@ -1,0 +1,32 @@
+{{ if children }}
+    <li>
+        <button type="button" @click="isSubMenuOpen = !isSubMenuOpen"
+            x-on:mouseenter="timeout = setTimeout(() => { isSubMenuOpen = true }, 300)"
+            x-on:mouseleave="clearTimeout(timeout)" class="flex items-center max-xl:pt-4 max-xl:text-xl">
+
+            <span class="text-dark-900 dark:text-white font-semibold mr-1 transition-all duration-300 ease-in-out">
+                {{ title }}
+            </span>
+
+            <div :class="{ 'rotate-180': isSubMenuOpen }">
+                {{ svg src='chevron' class='size-5 fill-current text-dark-900 dark:text-white transition-all duration-300 ease-in-out' }}
+            </div>
+        </button>
+    </li>
+{{ else }}
+    {{ if toggle_button }}
+        <li>
+            <x-button url="{{ link }}" target_blank="{{ target_blank }}" variant="{{ button_variant }}"
+                size="{{ button_size }}">
+                {{ title }}
+            </x-button>
+        </li>
+    {{ else }}
+        <li>
+            <a href="{{ url }}" aria-label="{{ title }}"
+                class="inline-block max-xl:text-xl font-semibold text-dark-900 dark:text-white no-underline transition-all duration-300 ease-in-out hover:text-primary-700 max-xl:mt-4">
+                {{ title }}
+            </a>
+        </li>
+    {{ /if }}
+{{ /if }}

@@ -1,0 +1,18 @@
+<div class="container py-16 grid grid-cols-1 lg:grid-cols-3 items-center gap-8">
+    <div class="grid-cols-1 max-lg:text-center max-lg:justify-self-center">
+        {{ if title }}
+            <x-heading>{{ title }}</x-heading>
+        {{ /if }}
+        {{ if has_description }}
+            <x-richtext size="xl" class="mt-2">{{ description }}</x-richtext>
+        {{ /if }}
+    </div>
+
+    <div class="col-span-2 grid grid-cols-4 items-center gap-4 xl:gap-8">
+        {{ images }}
+            <div class="lg:bg-primary-100 lg:dark:bg-dark-800 lg:p-6 p-2 rounded-2xl">
+                {{ partial:components/picture :image="url" class="object-contain w-16 md:w-24 h-10 xl:w-36 mx-auto" }}
+            </div>
+        {{ /images }}
+    </div>
+</div>

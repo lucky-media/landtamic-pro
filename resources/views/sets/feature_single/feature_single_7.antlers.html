@@ -1,0 +1,11 @@
+<div class="container grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
+    {{ if image }}
+        {{ partial:components/picture cover="true" class="max-h-[600px]" }}
+    {{ /if }}
+    <div class="xl:px-12">
+        <x-heading size="h3">{{ title }}</x-heading>
+        {{ if has_description }}
+            <x-richtext size="lg" class="mt-8">{{ description }}</x-richtext>
+        {{ /if }}
+    </div>
+</div>

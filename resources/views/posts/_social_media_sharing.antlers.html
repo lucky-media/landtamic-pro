@@ -1,0 +1,10 @@
+ <div class="mt-12">
+     <p class="text-sm font-extrabold tracking-widest text-gray-900 dark:text-white uppercase">
+         Share this on social media
+     </p>
+
+     <ul class="flex flex-wrap gap-3 mt-4">
+         {{ partial:partials/social_link name="Facebook" url="https://www.facebook.com/sharer/sharer.php?u=#{{ permalink }}" }}
+         {{ partial:partials/social_link name="Twitter" url="https://twitter.com/intent/tweet?text={{ permalink }}" }}
+     </ul>
+ </div>

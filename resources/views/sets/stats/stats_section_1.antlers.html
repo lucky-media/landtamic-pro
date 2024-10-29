@@ -1,0 +1,30 @@
+<div class="bg-dark-900 dark:bg-dark-800 topography-pattern">
+    <div class="container py-16">
+        <div class="mb-12 mx-auto max-w-3xl text-center">
+            {{ if title }}
+                <x-heading color="white" class="mb-2">
+                    {{ title }}
+                </x-heading>
+            {{ /if }}
+            {{ if has_description }}
+                <x-richtext size="lg" color="light-gray">{{ description }}</x-richtext>
+            {{ /if }}
+        </div>
+
+        <div class="grid gap-5 grid-cols-1 lg:grid-cols-4 max-lg:divide-y lg:divide-x divide-white/30">
+            {{ stats }}
+                <div class="text-center max-xl:py-8">
+                    {{# The font size should stay static #}}
+                    <x-heading color="white" class="text-5xl">
+                        {{ number }}
+                    </x-heading>
+                    {{ if rich_text }}
+                        <x-richtext color="light-gray">
+                            {{ rich_text }}
+                        </x-richtext>
+                    {{ /if }}
+                </div>
+            {{ /stats }}
+        </div>
+    </div>
+</div>

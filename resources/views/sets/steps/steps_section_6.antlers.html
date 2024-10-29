@@ -1,0 +1,31 @@
+{{ if steps }}
+    <div class="container py-16">
+        <div
+            class="max-w-7xl max-md:min-h-[600px] mx-auto flex md:flex-row flex-col items-center md:items-start justify-center max-md:gap-4">
+            {{ steps }}
+                <div class="flex flex-col items-center text-center">
+                    {{ if light_icon || dark_icon }}
+                        <div
+                            class="size-20 bg-primary-100 dark:bg-primary-700 rounded-full flex flex-row items-center justify-center">
+                            <div class="dark:hidden">
+                                {{ partial:components/picture :image="light_icon" class="size-9 shrink-0" }}
+                            </div>
+                            <div class="hidden dark:block">
+                                {{ partial:components/picture :image="dark_icon" class="size-9 shrink-0" }}
+                            </div>
+                        </div>
+                    {{ /if }}
+                    <x-heading size="h6" class="text-center max-w-xs mt-4">
+                        {{ title }}
+                    </x-heading>
+                </div>
+                {{ if !last }}
+                    <div class="flex-1 relative md:mt-10">
+                        {{ svg src="chevron" class="size-4 fill-primary-200 dark:fill-dark-500 absolute left-1/2 -translate-x-1/2 bg-white dark:bg-dark-900 md:-rotate-90 -translate-y-1/2 top-1/2" }}
+                        <div class="max-md:h-28 max-md:w-0.5 md:h-0.5 bg-primary-200 dark:bg-dark-500"></div>
+                    </div>
+                {{ /if }}
+            {{ /steps }}
+        </div>
+    </div>
+{{ /if }}

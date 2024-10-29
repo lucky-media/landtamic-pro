@@ -1,0 +1,17 @@
+<div class="container py-16">
+    <div class="grid gap-8 grid-cols-1 lg:grid-cols-4 md:grid-cols-2">
+        {{ stats }}
+            <div class="pl-3 border-l-2 border-primary-200 dark:border-dark-600">
+                {{# The font size should stay static #}}
+                <x-heading class="!text-3xl">
+                    {{ number }}
+                </x-heading>
+                {{ if rich_text }}
+                    <x-richtext color="gray">
+                        {{ rich_text }}
+                    </x-richtext>
+                {{ /if }}
+            </div>
+        {{ /stats }}
+    </div>
+</div>

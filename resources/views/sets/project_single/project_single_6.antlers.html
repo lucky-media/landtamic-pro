@@ -1,0 +1,22 @@
+<div class="container py-20">
+    <div
+        class="relative overflow-hidden bg-primary-900 pt-5 md:pt-12 min-h-[480px] flex flex-col justify-between items-end">
+        <div class="max-w-xl md:text-center mx-auto z-10 max-md:px-4">
+            <x-heading color="white" size="h4">{{ title }}</x-heading>
+            {{ if has_description }}
+                <x-richtext size="lg" color="white" class="mt-4">{{ description }}</x-richtext>
+            {{ /if }}
+        </div>
+        {{ if has_link }}
+            <x-button url="{{ link }}" target="{{ target_blank ?? '_self' }}"
+                class="mr-8 p-4 text-white dark:text-dark-900 dark:bg-white bg-dark-900 rounded-none font-bold">
+                {{ label }}
+            </x-button>
+        {{ /if }}
+        {{ if image }}
+            <div class="absolute md:w-1/2 xl:w-4/12 h-56 xl:h-72 left-0 bottom-0">
+                {{ partial:components/picture cover="true" }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

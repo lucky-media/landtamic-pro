@@ -1,0 +1,79 @@
+title: 'Feature Single'
+fields:
+  -
+    handle: version
+    field:
+      options:
+        feature_single_1: 'Variant 1'
+        feature_single_2: 'Variant 2'
+        feature_single_3: 'Variant 3'
+        feature_single_4: 'Variant 4'
+        feature_single_5: 'Variant 5'
+        feature_single_6: 'Variant 6'
+        feature_single_7: 'Variant 7'
+      display: 'Feature Variant'
+      default: feature_single_1
+      type: button_group
+      validate:
+        - required
+  -
+    import: set_subtitle
+  -
+    handle: title
+    field:
+      display: Title
+      type: text
+      validate:
+        - required
+  -
+    import: set_description
+  -
+    handle: image
+    field:
+      mode: grid
+      container: assets
+      display: Image
+      type: assets
+      max_files: 1
+  -
+    handle: features
+    field:
+      type: replicator
+      display: Features
+      sets:
+        new_set_group:
+          display: 'New Set Group'
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: light_image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: 'Light Image'
+                    width: 50
+                -
+                  handle: dark_image
+                  field:
+                    max_files: 1
+                    container: assets
+                    type: assets
+                    display: 'Dark Image'
+                    width: 50
+                -
+                  handle: title
+                  field:
+                    type: text
+                    display: Title
+                    validate:
+                      - required
+                -
+                  handle: description
+                  field:
+                    type: textarea
+                    display: Description
+  -
+    import: button

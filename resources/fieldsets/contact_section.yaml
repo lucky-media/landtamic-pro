@@ -1,0 +1,128 @@
+title: 'Contact Section'
+fields:
+  -
+    handle: version
+    field:
+      options:
+        contact_1: 'Variant 1'
+        contact_2: 'Variant 2'
+        contact_3: 'Variant 3'
+      default: contact_1
+      display: 'Contact Variant'
+      type: button_group
+  -
+    handle: image
+    field:
+      container: assets
+      display: Image
+      type: assets
+      max_files: 1
+      if:
+        version: 'contains_any contact_2, contact_3'
+  -
+    handle: enable_location
+    field:
+      display: 'Enable Location'
+      type: toggle
+  -
+    handle: location_section
+    field:
+      display: 'Location Section'
+      type: section
+      if:
+        enable_location: 'equals true'
+  -
+    handle: location_title
+    field:
+      display: 'Location Title'
+      type: text
+      validate:
+        - 'required_if:enable_location,true'
+      if:
+        enable_location: 'equals true'
+  -
+    handle: location_subtitle
+    field:
+      display: 'Location Subtitle'
+      type: text
+      if:
+        enable_location: 'equals true'
+  -
+    handle: locations
+    field:
+      collapse: accordion
+      display: Locations
+      type: replicator
+      validate:
+        - 'required_if:enable_location,true'
+      if:
+        enable_location: 'equals true'
+      sets:
+        new_location:
+          display: 'New Location'
+          fields:
+            -
+              handle: title
+              field:
+                input_type: text
+                antlers: false
+                display: Title
+                type: text
+                icon: text
+                listable: hidden
+                validate:
+                  - required
+            -
+              handle: rich_text
+              field:
+                always_show_set_button: false
+                buttons:
+                  - bold
+                  - italic
+                  - unorderedlist
+                  - orderedlist
+                  - removeformat
+                  - anchor
+                save_html: false
+                toolbar_mode: fixed
+                link_noopener: true
+                link_noreferrer: true
+                target_blank: true
+                reading_time: false
+                fullscreen: true
+                allow_source: true
+                enable_input_rules: true
+                enable_paste_rules: true
+                display: 'Rich Text'
+                type: bard
+                icon: bard
+                listable: hidden
+  -
+    handle: enable_form
+    field:
+      display: 'Enable Form'
+      type: toggle
+  -
+    handle: form_title
+    field:
+      display: 'Form Title'
+      type: text
+      if:
+        enable_form: 'equals true'
+      validate:
+        - 'required_if:enable_form,true'
+  -
+    handle: form_subtitle
+    field:
+      display: 'Form Subtitle'
+      type: text
+      if:
+        enable_form: 'equals true'
+  -
+    handle: contact_form
+    field:
+      max_items: 1
+      display: 'Contact Form'
+      type: form
+      if:
+        enable_form: 'equals true'

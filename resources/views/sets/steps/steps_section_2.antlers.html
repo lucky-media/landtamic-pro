@@ -1,0 +1,21 @@
+<div class="container py-16">
+    <x-heading class="max-w-3xl max-md:text-center">{{ title }}</x-heading>
+    {{ if steps }}
+        <div class="grid gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mt-12">
+            {{ steps }}
+                <div>
+                    {{ if !last }}
+                        {{ svg src="dotted-line" class="shrink-0 fill-primary-600 stroke-primary-600" }}
+                    {{ /if }}
+                    {{ if last }}
+                        <div class="size-6 bg-primary-600 rounded-full"></div>
+                    {{ /if }}
+                    <x-heading size="h6" class="mt-6">{{ title }}</x-heading>
+                    {{ if description }}
+                        <x-paragraph color="gray" class="mt-2">{{ description }}</x-paragraph>
+                    {{ /if }}
+                </div>
+            {{ /steps }}
+        </div>
+    {{ /if }}
+</div>

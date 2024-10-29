@@ -1,0 +1,32 @@
+title: FAQ
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              buttons:
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - anchor
+                - underline
+                - strikethrough
+                - small
+                - horizontalrule
+              remove_empty_nodes: false
+              type: bard
+              display: Content
+          -
+            import: small_link

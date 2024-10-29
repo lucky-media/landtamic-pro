@@ -1,0 +1,12 @@
+<div class="py-12 bg-primary-100 dark:bg-dark-800">
+    <div class="container">
+        {{ if has_subtitle }}
+            <x-paragraph size="sm" color="primary" weight="medium" class="mb-2 uppercase">
+                {{ subtitle }}
+            </x-paragraph>
+        {{ /if }}
+        <x-heading>
+            {{ title }}
+        </x-heading>
+    </div>
+</div>

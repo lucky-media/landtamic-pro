@@ -1,0 +1,17 @@
+<div class="bg-primary-700">
+    <div class="container">
+        <div class="pt-16 mb-20 max-w-xl">
+            <x-heading color="white">{{ title }}</x-heading>
+            {{ if link }}
+                {{# Static white color, because the background is purple #}}
+                <x-action-link href="{{ link }}" target_blank="{{ target_blank }}" color="white"
+                    size="{{ button_size }}" class="mt-6 ">
+                    {{ label }}
+                </x-action-link>
+            {{ /if }}
+        </div>
+        {{ if image }}
+            {{ partial:components/picture cover="true" class="max-h-[700px]" }}
+        {{ /if }}
+    </div>
+</div>

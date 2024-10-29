@@ -1,0 +1,46 @@
+<div class="bg-primary-100 dark:bg-dark-800 py-12 lg:pt-20">
+    <div class="container">
+        <div id="testimonial-carousel-5" x-ignore ax-load="visible" x-data="slider('testimonial-carousel-5')"
+            class="splide">
+            <div class="splide__track">
+                <div class="splide__list">
+                    {{ testimonials }}
+                        <div class="splide__slide">
+                            <div class="max-w-5xl mx-auto mb-16">
+                                <div class="flex lg:flex-row flex-col bg-white dark:bg-dark-700 rounded-lg px-8 py-10">
+                                    {{ svg src="square-quote" class="shrink-0 size-6 fill-primary-700 dark:fill-white lg:mr-4 max-lg:mb-6" }}
+                                    {{ if rich_text }}
+                                        <x-richtext size="xl" color="dark">{{ rich_text }}</x-richtext>
+                                    {{ /if }}
+                                </div>
+
+                                {{# Triangle #}}
+                                <div class="w-6 mx-auto overflow-hidden">
+                                    <div class="w-6 h-4 origin-top-left transform -rotate-45 bg-white dark:bg-dark-700">
+                                    </div>
+                                </div>
+                                {{ if has_author }}
+                                    <div class="flex items-center justify-center mt-4">
+                                        {{ if image }}
+                                            <div class="size-16 overflow-hidden rounded-full">
+                                                {{ partial:components/picture cover="true" }}
+                                            </div>
+                                        {{ /if }}
+                                        <div class="ml-4">
+                                            <x-heading class="!text-lg font-bold">
+                                                {{ full_name }}
+                                            </x-heading>
+                                            {{ if position }}
+                                                <x-paragraph size="sm" color="gray">{{ position }}</x-paragraph>
+                                            {{ /if }}
+                                        </div>
+                                    </div>
+                                {{ /if }}
+                            </div>
+                        </div>
+                    {{ /testimonials }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

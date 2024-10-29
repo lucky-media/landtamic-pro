@@ -1,0 +1,21 @@
+<div class="relative overflow-hidden mt-12 xl:mt-32 mb-16 xl:mb-40 flex max-lg:flex-col">
+    <div class="container xl:pt-12 xl:pb-32 pb-16">
+        <div class="max-w-lg max-lg:text-center max-lg:mx-auto">
+            <x-heading size="h1">{{ title }}</x-heading>
+            {{ if has_description }}
+                <x-richtext size="xl" class="mt-4">{{ description }}</x-richtext>
+            {{ /if }}
+            {{ if toggle and label }}
+                <x-button url="{{ link }}" target="{{ target_blank ?? '_self' }}" variant="{{ button_variant }}"
+                    size="{{ button_size }}" class="mt-8">
+                    {{ label }}
+                </x-button>
+            {{ /if }}
+        </div>
+    </div>
+    {{ if hero_image }}
+        <div class=" lg:absolute lg:left-1/2 lg:top-0 lg:h-full lg:w-1/2 max-lg:translate-x-[15%] h-96">
+            {{ partial:components/picture :image="hero_image" cover="true" }}
+        </div>
+    {{ /if }}
+</div>

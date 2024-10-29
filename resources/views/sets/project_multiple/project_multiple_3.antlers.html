@@ -1,0 +1,30 @@
+<div class="container py-20">
+    <x-heading class="max-w-3xl">{{ title }}</x-heading>
+    {{ if projects }}
+        <div class="grid grid-cols-1 gap-12 xl:gap-20 md:grid-cols-2 mt-14">
+            {{ projects }}
+                <div class="border-b border-primary-200 dark:border-dark-600">
+                    {{ if title }}
+                        <x-heading size="h4" class="mb-6">{{ title }}</x-heading>
+                    {{ /if }}
+                    <div class="h-56 xl:h-96 overflow-hidden rounded-lg">
+                        {{ partial:components/picture cover="true" }}
+                    </div>
+                    {{ if rich_text || has_link }}
+                        <div class="flex lg:flex-row flex-col lg:justify-between lg:items-center items-start py-6">
+                            {{ if rich_text }}
+                                <x-richtext color="dark" class="font-semibold">{{ rich_text }}</x-richtext>
+                            {{ /if }}
+                            {{ if has_link }}
+                                <x-button url="{{ link }}" label="{{ label }}" color="{{ button_variant }}"
+                                    target="{{ target_blank ?? '_self' }}" class="max-lg:mt-3">
+                                    {{ label }}
+                                </x-button>
+                            {{ /if }}
+                        </div>
+                    {{ /if }}
+                </div>
+            {{ /projects }}
+        </div>
+    {{ /if }}
+</div>

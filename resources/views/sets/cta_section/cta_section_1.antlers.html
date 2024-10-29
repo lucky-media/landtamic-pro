@@ -1,0 +1,21 @@
+<div class="dark:bg-dark-800 bg-primary-100">
+    <div class="container py-20 md:py-16">
+        <div
+            class="flex flex-col justify-between max-md:space-y-16 overflow-hidden md:items-center md:flex-row bg-primary-700 rounded-2xl">
+            <div class="p-4 lg:p-12 max-w-xl max-md:text-center">
+                <x-heading size="h6" color="white">{{ title }}</x-heading>
+                {{ if toggle and label }}
+                    <x-button url="{{ link }}" target="{{ target_blank ?? '_self' }}" variant="{{ button_variant }}"
+                        size="{{ button_size }}" class="mt-6 md:mt-8">
+                        {{ label }}
+                    </x-button>
+                {{ /if }}
+            </div>
+            {{ if image }}
+                <div class="w-full lg:w-5/12 md:h-72">
+                    {{ partial:components/picture cover="true" }}
+                </div>
+            {{ /if }}
+        </div>
+    </div>
+</div>

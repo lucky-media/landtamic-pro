@@ -1,0 +1,22 @@
+<div class="lg:container flex lg:flex-row flex-col items-center max-lg:justify-center gap-11 max-lg:pt-12">
+    <div class="lg:w-5/12 max-lg:px-4">
+        <div class="max-w-md max-lg:text-center">
+            {{ if title }}
+                <x-heading>{{ title }}</x-heading>
+            {{ /if }}
+            {{ if has_description }}
+                <x-richtext size="xl" class="mt-2">{{ description }}</x-richtext>
+            {{ /if }}
+        </div>
+    </div>
+
+    <div class="lg:w-7/12 bg-dark-900 dark:bg-dark-800 relative max-lg:p-10 lg:px-20 xl:px-32 lg:py-16">
+        <div class="max-lg:hidden absolute inset-0 bg-dark-900 dark:bg-dark-800 translate-x-1/2 -z-10"></div>
+
+        <div class="flex flex-wrap max-lg:justify-center gap-6 xl:gap-16">
+            {{ images }}
+                {{ partial:components/picture :image="url" class="object-contain size-12 lg:size-16 shrink-0" }}
+            {{ /images }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="bg-primary-100 dark:bg-dark-900 py-32">
+    <div class="container">
+        {{ if title }}
+            <x-heading class="text-center mb-14">{{ title }}</x-heading>
+        {{ /if }}
+        {{ if faq_items }}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {{ faq_items }}
+                    <div class="bg-white dark:bg-dark-700 px-8 py-10 rounded-lg">
+                        {{ if title }}
+                            <x-heading size="h4" class="mb-4">{{ title }}</x-heading>
+                        {{ /if }}
+                        {{ if rich_text }}
+                            <x-richtext>
+                                {{ rich_text }}
+                            </x-richtext>
+                        {{ /if }}
+                        {{ if toggle and label }}
+                            <x-action-link href="{{ link }}" size="{{ button_size }}"
+                                target_blank="{{ target_blank }}" class="mt-6">
+                                {{ label }}
+                            </x-action-link>
+                        {{ /if }}
+                    </div>
+                {{ /faq_items }}
+            </div>
+        {{ /if }}
+    </div>
+</div>

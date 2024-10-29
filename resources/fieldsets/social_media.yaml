@@ -1,0 +1,46 @@
+title: 'Social Media'
+fields:
+  -
+    handle: toggle_social
+    field:
+      display: 'Toggle Social Media'
+      type: toggle
+  -
+    handle: social_title
+    field:
+      display: 'Social Title'
+      type: text
+      if:
+        toggle_social: 'equals true'
+  -
+    handle: social
+    field:
+      display: Social
+      type: grid
+      if:
+        toggle_social: 'equals true'
+      fields:
+        -
+          handle: title
+          field:
+            display: Title
+            type: text
+            validate:
+              - required
+            width: 25
+        -
+          handle: url
+          field:
+            display: URL
+            type: text
+            width: 50
+        -
+          handle: icon
+          field:
+            container: assets
+            folder: social
+            restrict: true
+            max_files: 1
+            display: Icon
+            type: assets
+            width: 25

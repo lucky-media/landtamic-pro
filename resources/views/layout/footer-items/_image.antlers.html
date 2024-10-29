@@ -1,0 +1,7 @@
+{{ $image_align = switch(
+                   (align == 'left') => 'mx-auto md:mx-0 md:mr-auto',
+                   (align == 'right') => 'mx-auto md:mx-0 md:ml-auto',
+                   () => 'mx-auto') }}
+<div class="{{ $image_align }}">
+    {{ partial:layout/navigation/logo }}
+</div>

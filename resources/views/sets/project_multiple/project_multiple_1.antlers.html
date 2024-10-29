@@ -1,0 +1,27 @@
+<div class="container py-20">
+    <x-heading class="max-w-3xl mx-auto text-center">{{ title }}</x-heading>
+    {{ if projects }}
+        <div class="grid grid-cols-1 gap-y-16 gap-x-8 lg:grid-cols-2 mt-14">
+            {{ projects }}
+                <x-link-wrapper link="{{ link }}" target_blank="{{ target_blank }}" class="group">
+                    <div class="rounded-lg bg-primary-100 dark:bg-dark-800 p-10 xl:p-20 mb-4">
+                        <div class="h-56 overflow-hidden">
+                            {{ partial:components/picture cover="true" }}
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        {{ if title }}
+                            <x-heading size="h5" class="group-hover:text-primary-700">
+                                {{ title }}
+                            </x-heading>
+                        {{ /if }}
+                        {{ if rich_text }}
+                            <x-richtext class="mt-2">{{ rich_text }}</x-richtext>
+                        {{ /if }}
+                    </div>
+                </x-link-wrapper>
+            {{ /projects }}
+        </div>
+    {{ /if }}
+</div>

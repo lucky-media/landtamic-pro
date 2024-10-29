@@ -1,0 +1,60 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              display: Name
+              type: text
+              placeholder: Name
+              validate:
+                - required
+              width: 50
+          -
+            handle: email
+            field:
+              input_type: email
+              display: Email
+              type: text
+              placeholder: Email
+              validate:
+                - required
+                - email
+              width: 50
+          -
+            handle: message
+            field:
+              display: Message
+              type: textarea
+              placeholder: Message
+          -
+            handle: image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Image
+          -
+            handle: checkboxes_field
+            field:
+              type: checkboxes
+              display: 'Checkboxes Field'
+              instructions: 'Provide additional field instructions like this very text'
+          -
+            handle: radio_field
+            field:
+              type: radio
+              display: 'Radio Field'
+              instructions: 'Provide additional field instructions like this very text'
+          -
+            handle: select_field
+            field:
+              type: select
+              display: 'Select Field'
+              default: option_1
+              options:
+                option_1: 'Option 1'
+                option_2: 'Option 2'

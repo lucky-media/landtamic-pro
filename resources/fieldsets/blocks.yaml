@@ -1,0 +1,96 @@
+title: 'Page Builder'
+fields:
+  -
+    handle: blocks
+    field:
+      collapse: accordion
+      display: Blocks
+      type: replicator
+      sets:
+        main:
+          display: Main
+          sets:
+            hero:
+              display: Hero
+              icon: layout-split-verical
+              fields:
+                -
+                  import: hero
+            feature_multiple:
+              display: 'Feature Multiple'
+              icon: layout-display-split-quarters
+              fields:
+                -
+                  import: feature_multiple
+            feature_single:
+              display: 'Feature Single'
+              icon: layout-flip-left
+              fields:
+                -
+                  import: feature_single
+            project_multiple:
+              display: 'Project Multiple'
+              icon: layout-grid-dots
+              fields:
+                -
+                  import: project_multiple
+            project_single:
+              display: 'Project Single'
+              icon: layout-split-right
+              fields:
+                -
+                  import: project_single
+            pricing_section:
+              display: 'Pricing Section'
+              icon: money-cashier-price-tag
+              fields:
+                -
+                  import: pricing_section
+            logo_cloud:
+              display: 'Logo Cloud'
+              icon: dashboard-layout
+              fields:
+                -
+                  import: logo_cloud
+            stats:
+              display: Stats
+              icon: addon-boxes-stack
+              fields:
+                -
+                  import: stats
+            steps:
+              display: Steps
+              icon: programming-script-code-brackets
+              fields:
+                -
+                  import: steps
+            team_section:
+              display: 'Team Section'
+              icon: id-face-scan
+              fields:
+                -
+                  import: team_section
+            testimonial:
+              display: Testimonial
+              icon: user-multiple
+              fields:
+                -
+                  import: testimonial
+            faq_section:
+              display: 'FAQ Section'
+              icon: dashboard-layout-2
+              fields:
+                -
+                  import: faq_section
+            contact_section:
+              display: 'Contact Section'
+              icon: mail-sign-at
+              fields:
+                -
+                  import: contact_section
+            cta_section:
+              display: 'CTA Section'
+              icon: align-object-center
+              fields:
+                -
+                  import: cta_section
