@@ -1,5 +1,7 @@
+> Note: This starter kit is a major upgrade from the highly popular paid Statamic starter kit, [Landtamic](https://statamic.com/starter-kits/luckymedia/landtamic).
+
 # 🚀 Landtamic Pro
-Landtamic Pro is a huge upgrade to the most famous paid starter kit on the Statamic marketplace, [Landtamic](https://github.com/lucky-media/landtamic). It's the all-in-one solution for building fast and creative websites with Statamic. With over **100 sets** available, Landtamic Pro enables you to generate countless distinct website layouts that differ from one another. Whether you're developing a refined landing page, a multifaceted blog, a personal website, or a SaaS, you can effortlessly customize your preferred design elements, add your logo, and craft engaging content. Building your website is as easy as sipping your morning coffee.
+Landtamic Pro is the all-in-one solution for building fast and creative websites with Statamic. With over **100 sets** available, Landtamic Pro enables you to generate countless distinct website layouts that differ from one another. Whether you're developing a refined landing page, a multifaceted blog, a personal website, or a SaaS, you can effortlessly customize your preferred design elements, add your logo, and craft engaging content. Building your website is as easy as sipping your morning coffee.
 
 ## ⚔️ Landtamic Pro vs Landtamic
 The difference is the updated design, light/dark mode, better components ( Blade ), and a refactor of what we had. Landtamic will remain a legacy version, it will only receive bug fixes. For Pro, we have other plans we are planning to add support for Forms ( similar to Formatic ) as an optional starter kit, and possibly add an eComm starter kit as well.
