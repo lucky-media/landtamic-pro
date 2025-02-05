@@ -53,7 +53,7 @@ data:
           id: MQBfpZZ5
           title: Twitter
           url: 'https://x.com'
-          icon: social/twitter-1641400598.svg
+          icon: social/twitter.svg
         -
           id: H8Smll0M
           title: Facebook
@@ -163,7 +163,7 @@ data:
           id: mHV2GK4I
           title: Twitter
           url: 'https://x.com'
-          icon: social/twitter-1641400598.svg
+          icon: social/twitter.svg
         -
           id: m8xtawPM
           title: Github

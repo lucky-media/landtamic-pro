@@ -3,8 +3,10 @@
         <div class="md:w-1/2 xl:w-3/4 flex max-md:justify-between gap-10 flex-wrap">
             {{ children }}
                 <div>
-                    <p class="mb-4 text-sm uppercase text-dark-600 dark:text-dark-400">{{ title }}</p>
-                    <ul class="xl:space-y-4">
+                    <{{ url ? 'a' : 'p' }} {{ url ?= 'href="{url}"' }}>
+                        <span class="text-sm uppercase text-dark-600 dark:text-dark-400">{{ title }}</span>
+                    </{{ url ? 'a' : 'p' }}>
+                    <ul class="space-y-4 mt-4">
                         {{ children }}
                             {{ partial:components/menu_item }}
                         {{ /children }}
@@ -12,24 +14,22 @@
                 </div>
             {{ /children }}
         </div>
-        <div class="md:w-1/2 xl:w-1/4 bg-primary-100 dark:bg-dark-800 rounded-lg p-4 relative overflow-hidden">
+        <div class="md:w-1/2 xl:w-1/4 bg-primary-100 dark:bg-dark-800 rounded-lg p-4 relative overflow-hidden z-0">
             <p class="mb-4 text-sm uppercase text-dark-600 dark:text-dark-400">Follow Us</p>
             {{ theme:links }}
-                <ul class="grid grid-cols-6 gap-x-6 gap-y-4 items-start relative z-10">
+                <div class="grid grid-cols-5 gap-x-6 gap-y-4 z-20">
                     {{ social }}
-                        <li class="group">
-                            {{ partial:partials/social_link_icon }}
-                        </li>
+                        {{ partial:partials/social_link_icon }}
                     {{ /social }}
-                </ul>
+                </div>
             {{ /theme:links }}
 
             <div
-                class="absolute w-80 h-10 right-0 bottom-16 rotate-[170deg] blur-lg bg-gradient-to-br from-transparent via-primary-900 opacity-20 to-transparent">
+                class="absolute w-80 h-10 right-0 bottom-16 rotate-[170deg] blur-lg bg-gradient-to-br from-transparent via-primary-900 opacity-20 to-transparent -z-10">
             </div>
 
             <div
-                class="absolute w-80 h-10 right-0 bottom-0 rotate-[170deg] blur bg-gradient-to-br from-transparent via-primary-900 opacity-20 to-transparent">
+                class="absolute w-80 h-10 right-0 bottom-0 rotate-[170deg] blur bg-gradient-to-br from-transparent via-primary-900 opacity-20 to-transparent -z-10">
             </div>
         </div>
     </div>
