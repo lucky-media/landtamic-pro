@@ -5,7 +5,6 @@
     openTimeout: null,
     closeTimeout: null
 }" x-resize="isMobile = ($width < 1024)" x-effect="if (!isMenuOpen) activeSubMenu = null">
-
     <nav aria-labelledby="nav-heading" :aria-expanded="isMenuOpen"
         @keydown.escape="isMenuOpen = false; activeSubMenu = null"
         @click.outside="isMenuOpen = false; activeSubMenu = null" class="relative">
@@ -19,15 +18,5 @@
                 </template>
             </div>
         </div>
-        {{ nav:navigation }}
-            {{ if children }}
-        <div x-cloak
-            x-show.important="activeSubMenu === '{{ id }}'"
-            @mouseleave="closeTimeout = setTimeout(() => { activeSubMenu = null }, 300)"
-            @mouseenter="clearTimeout(closeTimeout); openTimeout = setTimeout(() => { activeSubMenu = '{{ id }}' }, 200)">
-            {{ partial:partials/sub_menu }}
-        </div>
-        {{ /if }}
-        {{ /nav:navigation }}
     </nav>
 </div>
