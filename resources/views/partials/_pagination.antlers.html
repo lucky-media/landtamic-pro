@@ -1,7 +1,7 @@
-<ul class="flex items-center justify-center space-x-6 cursor-default md:space-x-10">
+<ul class="flex items-center justify-center gap-x-6 cursor-default md:gap-x-10">
     {{ if prev_page }}
         <a aria-label="prev-page" href="{{ prev_page }}">
-            {{ svg src="arrow-left" class="w-8 h-8 text-gray-900 fill-current hover:text-secondary-900" }}
+            {{ svg src="arrow-left" class="w-8 h-8 text-gray-900 fill-current hover:text-primary-700" }}
         </a>
     {{ else }}
         <li class="cursor-not-allowed">
@@ -12,12 +12,12 @@
     {{ links:segments }}
         {{ first }}
             {{ if page == current_page }}
-                <li class="justify-center text-sm hover:text-secondary-900">
+                <li class="justify-center text-sm hover:text-primary-700">
                     {{ page }}
                 </li>
             {{ else }}
                 <a href="{{ url }}" aria-label="go to page {{ page }}">
-                    <li class="justify-center text-sm text-gray-900 hover:text-secondary-900">
+                    <li class="justify-center text-sm text-gray-900 hover:text-primary-700">
                         {{ page }}
                     </li>
                 </a>
@@ -70,7 +70,7 @@
     {{# next #}}
     {{ if next_page }}
         <a aria-label="next-page" href="{{ next_page }}">
-            {{ svg src="arrow-right" class="w-8 h-8 text-gray-900 fill-current hover:text-secondary-900" }}
+            {{ svg src="arrow-right" class="w-8 h-8 text-gray-900 fill-current hover:text-primary-700" }}
         </a>
     {{ else }}
         <li class="cursor-not-allowed">
