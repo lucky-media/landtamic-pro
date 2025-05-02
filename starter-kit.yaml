@@ -30,9 +30,7 @@ export_paths:
   - public/assets/logos
   - public/assets/team
   - package.json
-  - tailwind.config.js
   - vite.config.js
-  - postcss.config.js
   - README.md
 dependencies:
   marcorieser/tailwind-merge-statamic: ^1.1
