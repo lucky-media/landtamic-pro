@@ -1,7 +1,7 @@
 <div class="container py-10 md:py-32">
     <div
         class="flex md:items-center gap-16 max-md:flex-col {{ theme:page_image_position === 'left' ? 'flex-row-reverse' : '' }}">
-        <div class="flex flex-col space-y-4 md:w-1/2">
+        <div class="flex flex-col gap-y-4 md:w-1/2">
             <x-heading>{{ theme:page_title }}</x-heading>
             {{ if theme:page_desc }}
                 <x-richtext size="xl" color="gray">

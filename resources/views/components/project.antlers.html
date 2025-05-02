@@ -4,7 +4,7 @@
         {{ partial:components/picture cover="true" }}
     </div>
     {{ if title }}
-        <x-heading size="h5" class="{{ has_link ?= 'hover:text-secondary-900' }}">{{ title }}</x-heading>
+        <x-heading size="h5" class="{{ has_link ?= 'hover:text-primary-700' }}">{{ title }}</x-heading>
     {{ /if }}
     {{ if rich_text }}
         <x-richtext>{{ rich_text }}</x-richtext>

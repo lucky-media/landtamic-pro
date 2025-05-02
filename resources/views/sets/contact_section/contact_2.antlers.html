@@ -7,7 +7,7 @@
     <div class="grid gap-8 grid-cols-1 md:grid-cols-2">
         {{ if enable_location }}
             <div class="max-w-xl">
-                <div class="mb-9 space-y-2 max-w-lg">
+                <div class="flex flex-col gap-y-2 mb-9 max-w-lg">
                     {{ if location_title }}
                         <x-heading size="h3">{{ location_title }}</x-heading>
                     {{ /if }}
@@ -17,7 +17,7 @@
                         </x-paragraph>
                     {{ /if }}
                 </div>
-                <div class="space-y-10">
+                <div class="flex flex-col gap-y-10">
                     {{ locations }}
                         <div>
                             <x-heading size="h5">{{ title }}</x-heading>

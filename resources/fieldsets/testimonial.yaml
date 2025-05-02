@@ -61,11 +61,12 @@ fields:
                   field:
                     display: 'Full Name'
                     type: text
-                    required:
-                      - 'required_if:has_author,true'
+                    width: 50
                     if:
                       has_author: 'equals true'
-                    width: 50
+                    validate:
+                      - sometimes
+                      - required
                 -
                   handle: position
                   field:

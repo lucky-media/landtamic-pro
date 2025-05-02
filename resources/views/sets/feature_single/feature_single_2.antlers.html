@@ -11,7 +11,7 @@
                 <x-richtext size="lg" class="mt-4">{{ description }}</x-richtext>
             {{ /if }}
             {{ if features }}
-                <div class="mt-10 space-y-6">
+                <div class="mt-10 flex flex-col gap-y-6">
                     {{ features }}
                         <div class="flex items-center">
                             {{ if light_image || dark_image }}

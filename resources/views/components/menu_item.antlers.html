@@ -2,7 +2,7 @@
     <li>
         <button type="button" @click="activeSubMenu = activeSubMenu === '{{ id }}' ? null : '{{ id }}'"
             @mouseenter="timeout = setTimeout(() => { activeSubMenu = '{{ id }}' }, 300)"
-            @mouseleave="clearTimeout(timeout)" class="flex items-center max-xl:pt-4 max-xl:text-xl">
+            @mouseleave="clearTimeout(timeout)" class="flex items-center max-xl:py-4 max-xl:text-xl">
 
             <span class="text-dark-900 dark:text-white font-semibold mr-1 transition-all duration-300 ease-in-out">
                 {{ title }}
@@ -16,7 +16,7 @@
 {{ else }}
     <li>
         <a href="{{ url }}" aria-label="{{ title }}"
-            class="inline-block max-xl:text-xl font-semibold text-dark-900 dark:text-white no-underline transition-all duration-300 ease-in-out hover:text-primary-700 max-xl:mt-4">
+            class="inline-block max-xl:text-xl font-semibold text-dark-900 dark:text-white no-underline transition-all duration-300 ease-in-out hover:text-primary-700 max-xl:py-4">
             {{ title }}
         </a>
     </li>

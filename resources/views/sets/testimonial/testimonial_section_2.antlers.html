@@ -14,7 +14,7 @@
                                         </div>
                                     {{ /if }}
                                     <div class="ml-4">
-                                        <x-heading class="!text-lg font-bold mt-2">
+                                        <x-heading class="text-lg! font-bold mt-2">
                                             {{ full_name }}
                                         </x-heading>
                                         {{ if position }}
@@ -24,7 +24,7 @@
                                 </div>
                             {{ /if }}
                             <div class="lg:w-3/4 max-lg:mt-16">
-                                <div class="flex items-start space-x-3.5">
+                                <div class="flex items-start gap-x-3.5">
                                     {{ svg src="square-quote" class="size-9 shrink-0 fill-primary-700 -mt-5" }}
                                     {{ if rich_text }}
                                         <x-richtext size="xl">{{ rich_text }}</x-richtext>

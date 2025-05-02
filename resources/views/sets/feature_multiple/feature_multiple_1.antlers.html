@@ -5,7 +5,7 @@
             {{ features }}
                 <x-link-wrapper link="{{ link }}" target_blank="{{ target_blank }}">
                     {{ if light_image || dark_image }}
-                        <div class="w-full overflow-hidden rounded h-64">
+                        <div class="w-full overflow-hidden rounded-sm h-64">
                             <div class="dark:hidden">
                                 {{ partial:components/picture :image="light_image" cover="true" }}
                             </div>

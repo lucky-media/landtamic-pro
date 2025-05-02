@@ -1,4 +1,5 @@
-<div class="flex flex-row flex-wrap items-center justify-between">
+<div x-data="{ isMenuOpen: false, activeSubMenu: null, openTimeout: null, closeTimeout: null }"
+    class="flex flex-row flex-wrap items-center justify-between">
     {{ partial:layout/navigation/logo }}
     <div class="flex items-center">
         {{ if theme:enable_dark_mode }}
@@ -8,9 +9,16 @@
     </div>
 
     <div class="w-full" :class="{ 'block shadow-3xl': isMenuOpen, 'hidden': !isMenuOpen }" x-cloak>
-        <ul class="flex flex-col w-full mt-5 divide-y divide-primary-200 dark:divide-dark-600 max-xl:space-y-4">
+        <ul class="flex flex-col w-full mt-5 divide-y divide-primary-200 dark:divide-dark-600">
             {{ nav:navigation include_home="true" }}
                 {{ partial:components/menu_item }}
+                {{ if children }}
+                    <div x-cloak x-show.important="activeSubMenu === '{{ id }}'"
+                        @mouseleave="closeTimeout = setTimeout(() => { activeSubMenu = null }, 300)"
+                        @mouseenter="clearTimeout(closeTimeout); openTimeout = setTimeout(() => { activeSubMenu = '{{ id }}' }, 200)">
+                        {{ partial:partials/sub_menu }}
+                    </div>
+                {{ /if }}
             {{ /nav:navigation }}
             {{ partial:components/menu_buttons variant="mobile" }}
         </ul>
