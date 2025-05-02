@@ -1,10 +1,10 @@
 <div class="overflow-hidden bg-primary-800 dark:bg-dark-900">
     <div class="container pt-16 md:pt-24">
-        <div class="mx-auto max-w-5xl text-center space-y-8">
+        <div class="mx-auto max-w-5xl text-center">
             <x-heading size="h1" color="white">{{ title }}</x-heading>
             {{ if toggle and label }}
                 <x-button url="{{ link }}" target="{{ target_blank ?? '_self' }}" variant="{{ button_variant }}"
-                    size="{{ button_size }}">
+                    size="{{ button_size }}" class="mt-8">
                     {{ label }}
                 </x-button>
             {{ /if }}

@@ -13,7 +13,7 @@
         {{ if members }}
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-24 mt-28">
                 {{ members }}
-                    <div class="flex max-lg:flex-col lg:space-x-4 max-lg:space-y-4">
+                    <div class="flex max-lg:flex-col lg:gap-x-4 max-lg:gap-y-4">
                         {{ if image }}
                             <div class="lg:w-1/2 h-80 overflow-hidden rounded-2xl">
                                 {{ partial:components/picture cover="true" }}
@@ -30,7 +30,7 @@
                                 </x-richtext>
                             {{ /if }}
                             {{ if toggle_social }}
-                                <ul class="flex space-x-2 mt-8">
+                                <ul class="flex gap-x-2 mt-8">
                                     {{ social }}
                                         <li>
                                             <x-link-wrapper link="{{ url }}" aria_label="Visit {{ title }}">

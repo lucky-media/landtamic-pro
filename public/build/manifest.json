@@ -27,9 +27,9 @@
     "file": "assets/inter-vietnamese-wght-normal-_GQuwPVU.woff2",
     "src": "node_modules/@fontsource-variable/inter/files/inter-vietnamese-wght-normal.woff2"
   },
-  "resources/css/tailwind.css": {
-    "file": "assets/tailwind-DRAUkbeM.css",
-    "src": "resources/css/tailwind.css",
+  "resources/css/site.css": {
+    "file": "assets/site-C0pp31Bg.css",
+    "src": "resources/css/site.css",
     "isEntry": true
   },
   "resources/js/core/Slider.js": {
@@ -39,7 +39,7 @@
     "isDynamicEntry": true
   },
   "resources/js/site.js": {
-    "file": "assets/site-CqM1-y7s.js",
+    "file": "assets/site-CiXYaAXU.js",
     "name": "site",
     "src": "resources/js/site.js",
     "isEntry": true,
@@ -47,7 +47,7 @@
       "resources/js/core/Slider.js"
     ],
     "css": [
-      "assets/site-DXGAeFca.css"
+      "assets/site-CdKPQU3S.css"
     ],
     "assets": [
       "assets/inter-cyrillic-ext-wght-normal-DIEz8p5i.woff2",

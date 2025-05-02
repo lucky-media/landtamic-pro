@@ -11,9 +11,9 @@
             {{ /if }}
         </div>
 
-        <div class="grid gap-5 grid-cols-1 lg:grid-cols-4 max-lg:divide-y lg:divide-x divide-white/30">
+        <div class="grid gap-5 grid-cols-1 lg:grid-cols-4">
             {{ stats }}
-                <div class="text-center max-xl:py-8">
+                <div class="text-center max-xl:py-8 first:border-t-0 border-t lg:border-t-0 lg:first:border-l-0 lg:border-l border-white/30">
                     {{# The font size should stay static #}}
                     <x-heading color="white" class="text-5xl">
                         {{ number }}
