@@ -33,7 +33,7 @@ sliderConfig: '{ arrows: true, pagination: false }'
                                                 </div>
                                             {{ /if }}
                                             <div class="ml-4">
-                                                <x-heading class="!text-lg font-bold">
+                                                <x-heading class="text-lg! font-bold">
                                                     {{ full_name }}
                                                 </x-heading>
                                                 {{ if position }}
@@ -57,11 +57,11 @@ sliderConfig: '{ arrows: true, pagination: false }'
                 </div>
 
                 <div class="relative splide__arrows flex flex-row items-center">
-                    <button class="splide__arrow splide__arrow--prev !bg-transparent !left-36 !-top-5">
-                        {{ svg src="chevron" class="size-6 fill-dark-900 dark:fill-white !rotate-90 shrink-0" }}
+                    <button class="splide__arrow splide__arrow--prev bg-transparent! left-36! -top-5!">
+                        {{ svg src="chevron" class="size-6 fill-dark-900 dark:fill-white rotate-90! shrink-0" }}
                     </button>
-                    <button class="splide__arrow splide__arrow--next !bg-transparent !left-48 !-top-5">
-                        {{ svg src="chevron" class="size-6 fill-dark-900 dark:fill-white !-rotate-90 shrink-0" }}
+                    <button class="splide__arrow splide__arrow--next bg-transparent! left-48! -top-5!">
+                        {{ svg src="chevron" class="size-6 fill-dark-900 dark:fill-white -rotate-90! shrink-0" }}
                     </button>
                 </div>
             </div>

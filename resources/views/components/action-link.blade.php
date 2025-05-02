@@ -43,5 +43,5 @@
 
 <a href="{{ $href }}" {{ $attributes->twMerge(['class' => $classes]) }}  target="{{ $target_blank ? '_blank' : '_self' }}">
     {{ $slot }}
-   <svg class="transition-transform ease-in-out ml-2 duration-300 flex-shrink-0 group-hover:translate-x-2 {{ $icon_classes }}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M8.293 5.293a1 1 0 0 0 0 1.414L13.586 12l-5.293 5.293a1 1 0 1 0 1.414 1.414l6-6a1 1 0 0 0 0-1.414l-6-6a1 1 0 0 0-1.414 0Z" clip-rule="evenodd"/></svg>
+   <svg class="transition-transform ease-in-out ml-2 duration-300 shrink-0 group-hover:translate-x-2 {{ $icon_classes }}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M8.293 5.293a1 1 0 0 0 0 1.414L13.586 12l-5.293 5.293a1 1 0 1 0 1.414 1.414l6-6a1 1 0 0 0 0-1.414l-6-6a1 1 0 0 0-1.414 0Z" clip-rule="evenodd"/></svg>
 </a>
